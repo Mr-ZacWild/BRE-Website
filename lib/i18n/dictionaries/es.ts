@@ -13,6 +13,7 @@ export const es: Dictionary = {
     about: "Nosotros",
     faq: "Preguntas frecuentes",
     contact: "Contacto",
+    blog: "Guias",
     checkAvailability: "Ver disponibilidad",
   },
   common: {

@@ -15,21 +15,21 @@ export function TrustedBy() {
       <p className="text-center text-xs uppercase tracking-widest text-sage">
         Also bookable on
       </p>
-      <div className="group relative mt-4 overflow-hidden">
-        <div className="flex w-max animate-[marquee_22s_linear_infinite] items-center gap-12 group-hover:[animation-play-state:paused]">
+      <div className="group relative mt-6 overflow-hidden">
+        <div className="flex w-max animate-[marquee_26s_linear_infinite] items-center gap-16 group-hover:[animation-play-state:paused]">
           {[0, 1].map((copy) => (
-            <div key={copy} className="flex shrink-0 items-center gap-12 pr-12">
+            <div key={copy} className="flex shrink-0 items-center gap-16 pr-16">
               <Image
                 src="/images/trust/airbnb-official-logo.png"
                 alt="Airbnb"
-                width={22}
-                height={22}
-                className="h-6 w-6 object-contain opacity-70"
+                width={80}
+                height={80}
+                className="h-14 w-14 object-contain opacity-70 sm:h-16 sm:w-16"
               />
               {track.map((name) => (
                 <span
                   key={name}
-                  className="whitespace-nowrap font-heading text-lg text-quetzal/50"
+                  className="whitespace-nowrap font-heading text-3xl text-quetzal/50 sm:text-4xl"
                 >
                   {name}
                 </span>

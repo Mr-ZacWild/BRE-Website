@@ -34,6 +34,7 @@ export function Nav({ lang, dict }: { lang: Locale; dict: Dictionary }) {
 
   const links = [
     { href: `${prefix}/properties`, label: dict.nav.properties },
+    { href: `${prefix}/blog`, label: dict.nav.blog },
     { href: `${prefix}/about`, label: dict.nav.about },
     { href: `${prefix}/faq`, label: dict.nav.faq },
     { href: `${prefix}/contact`, label: dict.nav.contact },

@@ -55,7 +55,13 @@ export function Footer({ lang, dict }: { lang: Locale; dict: Dictionary }) {
 
         <div className="mt-10 flex flex-col gap-2 border-t border-crema/10 pt-6 text-xs text-crema/50 sm:flex-row sm:items-center sm:justify-between">
           <span>© {new Date().getFullYear()} Buen Rollo LLC</span>
-          <span>{dict.footer.payments}</span>
+          <div className="flex items-center gap-4">
+            <span>{dict.footer.payments}</span>
+            {/* TODO: rename once Zac confirms what this Tally form is for */}
+            <Link href={`${prefix}/form`} className="text-crema/30 hover:text-crema/60">
+              Form
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

@@ -8,6 +8,7 @@ export interface Dictionary {
     about: string;
     faq: string;
     contact: string;
+    blog: string;
     checkAvailability: string;
   };
   common: {
@@ -40,6 +41,7 @@ export const en: Dictionary = {
     about: "About",
     faq: "FAQ",
     contact: "Contact",
+    blog: "Guides",
     checkAvailability: "Check availability",
   },
   common: {
