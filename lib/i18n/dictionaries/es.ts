@@ -31,6 +31,6 @@ export const es: Dictionary = {
       privacy: "Privacidad",
       cancellation: "Politica de cancelacion",
     },
-    payments: "Pago seguro via Guesty",
+    payments: "Opciones de pago seguro disponibles",
   },
 };

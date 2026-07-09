@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Locale } from "@/lib/i18n/config";
 import type { Dictionary } from "@/lib/i18n/dictionaries/en";
 import { PROPERTIES, LOCATIONS, type LocationSlug } from "@/lib/properties";
-import { SAMPLE_REVIEWS } from "@/lib/reviews";
+import { REVIEWS } from "@/lib/reviews";
 import { Hero } from "./hero";
 import { TrustBar } from "./trust-bar";
 import { WhyBookDirect } from "./why-book-direct";
@@ -81,8 +81,11 @@ export function HomeView({ lang, dict }: { lang: Locale; dict: Dictionary }) {
           <p className="text-center text-xs uppercase tracking-widest text-mint">
             What guests say
           </p>
-          <div className="mt-8 grid gap-4 sm:grid-cols-3">
-            {SAMPLE_REVIEWS.map((review) => (
+          <h2 className="mt-2 text-center font-heading text-2xl text-crema sm:text-3xl">
+            Explore our guest reviews
+          </h2>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            {REVIEWS.map((review) => (
               <ReviewCard key={review.name} review={review} />
             ))}
           </div>

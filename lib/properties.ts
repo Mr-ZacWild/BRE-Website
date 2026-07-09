@@ -10,11 +10,11 @@ export interface Property {
   highlights: string[];
   amenities: string[];
   /**
-   * Path segment appended to the Guesty booking domain, e.g.
-   * https://buenrolloescapes.guestybookings.com/properties/{guestySlug}
-   * TODO: confirm real Guesty listing slugs with Zac before launch.
+   * Real Guesty listing _id, pulled from the Open API on 2026-07-09.
+   * `undefined` means this unit isn't in Guesty yet - the booking CTA
+   * falls back to WhatsApp-only in that case (see lib/guesty.ts).
    */
-  guestySlug: string;
+  guestyListingId?: string;
 }
 
 export const LOCATIONS: Record<
@@ -46,7 +46,7 @@ export const PROPERTIES: Property[] = [
     bedrooms: 1,
     highlights: ["Pool access", "Gym access", "Co-working space", "24/7 security"],
     amenities: ["Pool", "Gym", "Co-working lounge", "24/7 security", "Elevator", "Wifi"],
-    guestySlug: "zona-11-luxury-king-pool-gym",
+    guestyListingId: "68817a0e13ac2b001f24a3f6", // PSJ | #317
   },
   {
     slug: "zona-11-high-level-volcano-view-king",
@@ -57,7 +57,10 @@ export const PROPERTIES: Property[] = [
     bedrooms: 1,
     highlights: ["High floor", "Volcano view", "Pool access", "Gym access"],
     amenities: ["Pool", "Gym", "Co-working lounge", "24/7 security", "Elevator", "Wifi"],
-    guestySlug: "zona-11-high-level-volcano-view-king",
+    // AMBIGUOUS - Guesty has 3 active "volcano view" PSJ units (#1819,
+    // #1919, #1820) and our seed only has 2 volcano-view entries. Zac
+    // needs to confirm which listing ID is which before we pick one.
+    guestyListingId: undefined,
   },
   {
     slug: "zona-11-high-level-city-view",
@@ -68,7 +71,7 @@ export const PROPERTIES: Property[] = [
     bedrooms: 1,
     highlights: ["High floor", "City view", "Pool access", "Gym access"],
     amenities: ["Pool", "Gym", "Co-working lounge", "24/7 security", "Elevator", "Wifi"],
-    guestySlug: "zona-11-high-level-city-view",
+    guestyListingId: "68817975f821b0002245a032", // PSJ | #1918
   },
   {
     slug: "zona-11-volcano-view",
@@ -79,7 +82,8 @@ export const PROPERTIES: Property[] = [
     bedrooms: 1,
     highlights: ["Volcano view", "Pool access", "Gym access"],
     amenities: ["Pool", "Gym", "Co-working lounge", "24/7 security", "Elevator", "Wifi"],
-    guestySlug: "zona-11-volcano-view",
+    // AMBIGUOUS - see note on zona-11-high-level-volcano-view-king above.
+    guestyListingId: undefined,
   },
   {
     slug: "zona-14-three-bedroom",
@@ -90,7 +94,7 @@ export const PROPERTIES: Property[] = [
     bedrooms: 3,
     highlights: ["Largest unit", "High floor", "Airport & city views"],
     amenities: ["Elevator", "24/7 security", "Wifi", "Full kitchen"],
-    guestySlug: "zona-14-three-bedroom",
+    guestyListingId: "68b3b8f1d4211c00120cd5cc", // Parque 14 - 1503
   },
   {
     slug: "antigua-central-king-loft",
@@ -101,7 +105,7 @@ export const PROPERTIES: Property[] = [
     bedrooms: 1,
     highlights: ["Volcano view", "Walk to Parque Central"],
     amenities: ["Wifi", "Kitchenette", "Rooftop access"],
-    guestySlug: "antigua-central-king-loft",
+    guestyListingId: "6881797de27463001384a290", // Antigua Loft
   },
   {
     slug: "antigua-three-bedroom-house",
@@ -112,7 +116,7 @@ export const PROPERTIES: Property[] = [
     bedrooms: 3,
     highlights: ["5 beds", "Heart of Antigua", "Full house"],
     amenities: ["Wifi", "Full kitchen", "Private entrance", "Courtyard"],
-    guestySlug: "antigua-three-bedroom-house",
+    guestyListingId: "688179a755d65a0011e18bc5", // Antigua Entire Casa
   },
   {
     slug: "el-paredon-off-grid-camping",
@@ -123,7 +127,8 @@ export const PROPERTIES: Property[] = [
     bedrooms: 0,
     highlights: ["250m from the beach", "Off-grid", "Surf town"],
     amenities: ["Shared bathroom", "Hammocks", "Solar power"],
-    guestySlug: "el-paredon-off-grid-camping",
+    // Not in Guesty at all yet (0 results for El Paredon in the account).
+    guestyListingId: undefined,
   },
 ];
 

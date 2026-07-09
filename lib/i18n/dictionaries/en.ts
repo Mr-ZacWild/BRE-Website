@@ -58,6 +58,6 @@ export const en: Dictionary = {
       privacy: "Privacy",
       cancellation: "Cancellation policy",
     },
-    payments: "Secure payment via Guesty",
+    payments: "Secure payment options available",
   },
 };

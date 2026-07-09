@@ -5,27 +5,34 @@ export interface Review {
   property: string;
 }
 
-// SAMPLE DATA - replace with real Airbnb review exports before launch.
-// Ask Zac for 6-8 quotes with first name + country + property stayed.
-export const SAMPLE_REVIEWS: Review[] = [
+// Real Airbnb review excerpts, supplied by Zac on 2026-07-09.
+export const REVIEWS: Review[] = [
   {
     quote:
-      "Felt like staying with friends who happen to have the best apartment in Zona 14.",
-    name: "Sarah",
-    country: "USA",
-    property: "Zona 14 Three-Bedroom Apartment",
+      "Found this gem on a last minute trip to Antigua. The home was so beautiful! So spacious, clean! We loved the king beds. Hosts were extremely welcoming and quick to respond. Definitely recommend - we're looking forward to staying here again.",
+    name: "Maria",
+    country: "Los Angeles, USA",
+    property: "Antigua Three-Bedroom House",
   },
   {
     quote:
-      "Woke up to volcano views every morning in Antigua. Hosts answered WhatsApp in minutes.",
-    name: "Marc",
-    country: "Canada",
+      "The place was clean and cozy. We loved that we could use all the amenities. Communication was very good; they always responded quickly. 100% recommended. We wished we could have stayed longer.",
+    name: "Josh",
+    country: "Guatemala",
+    property: "Guatemala City, Zona 11",
+  },
+  {
+    quote:
+      "Zac was very accommodating from start to finish. The loft was perfect for my stay and conveniently located. Everything was as described and I hope to visit and stay at this same Airbnb. I highly recommend!!",
+    name: "Patrick",
+    country: "London, United Kingdom",
     property: "Central King Loft",
   },
   {
-    quote: "El Paredon camping was the most relaxed three nights of the whole trip.",
-    name: "Julia",
-    country: "Germany",
-    property: "Off-Grid Beach Camping",
+    quote:
+      "What a fantastic stay! The views are a total wow - volcano and airport views! Everything was spotlessly clean, the beds were super comfy, and the location couldn't be better. Zac is an awesome host - very accommodating, lightning-fast to respond, and super easy to communicate with in both Spanish and English.",
+    name: "Normita",
+    country: "Ottawa, Canada",
+    property: "Zona 14 Three-Bedroom Apartment",
   },
 ];

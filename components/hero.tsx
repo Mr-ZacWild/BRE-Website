@@ -25,12 +25,12 @@ export function Hero({ lang, dict }: { lang: Locale; dict: Dictionary }) {
 
       <div className="relative mx-auto w-full max-w-6xl px-5 pb-16 pt-32">
         <p
-          className="max-w-xl text-4xl italic text-crema sm:text-5xl"
+          className="max-w-2xl text-5xl italic leading-[1.05] text-crema sm:text-7xl"
           style={{ fontFamily: "var(--font-accent)" }}
         >
           Good vibes travel well.
         </p>
-        <p className="mt-4 max-w-md text-base text-crema/85">
+        <p className="mt-5 max-w-md text-base text-crema/85">
           Boutique apartments and off-grid stays in Guatemala City, Antigua
           Guatemala and El Paredon. Book direct, meet the hosts.
         </p>

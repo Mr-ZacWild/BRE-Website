@@ -117,19 +117,25 @@ export function PropertyDetailView({
           <p className="mt-1 text-xs text-ink/60">
             Rates and dates are managed in our booking calendar.
           </p>
-          <a
-            href={bookingUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-4 block rounded-md bg-coral py-3 text-center text-sm font-medium text-crema"
-          >
-            {dict.common.checkAvailability}
-          </a>
+          {bookingUrl && (
+            <a
+              href={bookingUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 block rounded-md bg-coral py-3 text-center text-sm font-medium text-crema"
+            >
+              {dict.common.checkAvailability}
+            </a>
+          )}
           <a
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-3 block rounded-md border border-quetzal/25 py-3 text-center text-sm text-quetzal"
+            className={`block rounded-md text-center text-sm ${
+              bookingUrl
+                ? "mt-3 border border-quetzal/25 py-3 text-quetzal"
+                : "mt-4 bg-coral py-3 font-medium text-crema"
+            }`}
           >
             {dict.common.whatsappUs}
           </a>
