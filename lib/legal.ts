@@ -27,6 +27,7 @@ export const TERMS_SECTIONS: LegalSection[] = [
       "If you booked through a third-party platform (Airbnb, Booking.com, etc.), that platform's cancellation policy applies.",
       "If you booked direct with us, you'll receive a full refund for cancellations made at least 48 hours before your scheduled check-in. Cancellations made within 48 hours of check-in, and no-shows, are non-refundable.",
       "Approved refunds are returned to your original payment method. Processing time varies by payment provider.",
+      "Bank and payment-processing fees are never refundable. Any transaction fee charged by a bank or card processor on a refund is passed on to the guest, regardless of booking method. See our full Cancellation Policy for details.",
     ],
   },
   {
@@ -96,11 +97,6 @@ export const PRIVACY_SECTIONS: LegalSection[] = [
 
 export const CANCELLATION_SECTIONS: LegalSection[] = [
   {
-    body: [
-      "This is a summary - the full policy lives on our Terms page.",
-    ],
-  },
-  {
     heading: "Booked through Airbnb, Booking.com, or another platform",
     body: [
       "The cancellation policy you selected on that platform governs your booking.",
@@ -111,7 +107,14 @@ export const CANCELLATION_SECTIONS: LegalSection[] = [
     body: [
       "Full refund for cancellations made at least 48 hours before check-in.",
       "No refund for cancellations made within 48 hours of check-in, or for no-shows.",
-      "Approved refunds return to your original payment method; processing time varies by provider.",
+      "Approved refunds return to your original payment method - processing time varies by provider.",
+    ],
+  },
+  {
+    heading: "Transaction and processing fees",
+    body: [
+      "Any transaction fee a bank or card processor charges on a payment or refund is non-refundable and is passed on to the guest.",
+      "This applies to every booking and every refund, direct or through a third-party platform.",
     ],
   },
 ];

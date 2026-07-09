@@ -5,7 +5,7 @@ import type { Property } from "@/lib/properties";
 import { LOCATIONS } from "@/lib/properties";
 import { getGuestyBookingUrl } from "@/lib/guesty";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
-import { ImagePlaceholder } from "./image-placeholder";
+import { PropertyPhoto } from "./property-photo";
 
 export function PropertyDetailView({
   property,
@@ -51,14 +51,16 @@ export function PropertyDetailView({
       </h1>
 
       <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
-        <ImagePlaceholder
-          label={`${property.name} photo 1`}
+        <PropertyPhoto
+          src={property.photos?.[0]}
+          alt={`${property.name} photo 1`}
           className="col-span-2 row-span-2 h-64 rounded-xl sm:h-full"
         />
         {[2, 3, 4].map((n) => (
-          <ImagePlaceholder
+          <PropertyPhoto
             key={n}
-            label={`${property.name} photo ${n}`}
+            src={property.photos?.[n - 1]}
+            alt={`${property.name} photo ${n}`}
             className="h-32 rounded-xl sm:h-full"
             tone="sage"
           />

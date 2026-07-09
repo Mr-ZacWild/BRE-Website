@@ -3,7 +3,7 @@ import { Users } from "lucide-react";
 import type { Property } from "@/lib/properties";
 import type { Locale } from "@/lib/i18n/config";
 import type { Dictionary } from "@/lib/i18n/dictionaries/en";
-import { ImagePlaceholder } from "./image-placeholder";
+import { PropertyPhoto } from "./property-photo";
 
 export function PropertyCard({
   property,
@@ -21,8 +21,9 @@ export function PropertyCard({
       href={`${prefix}/properties/${property.slug}`}
       className="group block overflow-hidden rounded-xl border border-quetzal/10 bg-white transition-shadow hover:shadow-md"
     >
-      <ImagePlaceholder
-        label={`${property.name} photo`}
+      <PropertyPhoto
+        src={property.photos?.[0]}
+        alt={`${property.name} photo`}
         className="h-44 w-full"
         tone="mint"
       />

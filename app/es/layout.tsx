@@ -11,7 +11,7 @@ export default function SpanishLayout({
   return (
     <>
       <Nav lang="es" dict={es} />
-      <main className="flex-1">{children}</main>
+      <main className="flex-1 pt-16">{children}</main>
       <Footer lang="es" dict={es} />
       <WhatsAppFloat lang="es" />
     </>

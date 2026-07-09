@@ -1,9 +1,10 @@
-import { Users, Star, ShieldCheck, Lock } from "lucide-react";
+import Image from "next/image";
+import { Users, ShieldCheck, Lock } from "lucide-react";
 
 // Confirmed by Zac on 2026-07-09.
 const STATS = [
-  { icon: Users, label: "Thousands+ guests hosted" },
-  { icon: Star, label: "4.95 on Airbnb" },
+  { icon: Users, label: "1,000+ guests hosted" },
+  { icon: null, label: "4.95 on Airbnb" },
   { icon: ShieldCheck, label: "Superhost" },
   { icon: Lock, label: "Secure payment options available" },
 ];
@@ -17,7 +18,18 @@ export function TrustBar() {
             key={label}
             className="flex items-center gap-1.5 rounded-full border border-quetzal/15 bg-white px-3.5 py-1.5 text-xs font-medium text-quetzal sm:text-sm"
           >
-            <Icon size={14} className="text-sage" aria-hidden="true" />
+            {Icon ? (
+              <Icon size={14} className="text-sage" aria-hidden="true" />
+            ) : (
+              <Image
+                src="/images/trust/airbnb-official-logo.png"
+                alt=""
+                width={14}
+                height={14}
+                className="h-3.5 w-3.5 object-contain"
+                aria-hidden="true"
+              />
+            )}
             {label}
           </span>
         ))}

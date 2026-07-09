@@ -4,12 +4,13 @@ import type { Dictionary } from "@/lib/i18n/dictionaries/en";
 import { PROPERTIES, LOCATIONS, type LocationSlug } from "@/lib/properties";
 import { REVIEWS } from "@/lib/reviews";
 import { Hero } from "./hero";
+import { Intro } from "./intro";
 import { TrustBar } from "./trust-bar";
 import { WhyBookDirect } from "./why-book-direct";
 import { PropertyCard } from "./property-card";
 import { ReviewCard } from "./review-card";
 import { CtaBanner } from "./cta-banner";
-import { ImagePlaceholder } from "./image-placeholder";
+import { PropertyPhoto } from "./property-photo";
 
 export function HomeView({ lang, dict }: { lang: Locale; dict: Dictionary }) {
   const prefix = lang === "en" ? "" : "/es";
@@ -21,7 +22,8 @@ export function HomeView({ lang, dict }: { lang: Locale; dict: Dictionary }) {
 
   return (
     <>
-      <Hero lang={lang} dict={dict} />
+      <Hero />
+      <Intro lang={lang} dict={dict} />
       <TrustBar />
       <WhyBookDirect />
 
@@ -59,8 +61,9 @@ export function HomeView({ lang, dict }: { lang: Locale; dict: Dictionary }) {
                 href={`${prefix}/${slug}`}
                 className="group overflow-hidden rounded-xl border border-quetzal/10 bg-white"
               >
-                <ImagePlaceholder
-                  label={`${location.name} photo`}
+                <PropertyPhoto
+                  src={location.heroPhoto}
+                  alt={`${location.name} photo`}
                   className="h-36 w-full"
                   tone="sage"
                 />

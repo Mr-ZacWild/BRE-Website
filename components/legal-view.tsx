@@ -1,3 +1,5 @@
+import { Check } from "lucide-react";
+
 export interface LegalSection {
   heading?: string;
   body: string[];
@@ -22,11 +24,18 @@ export function LegalView({
             {section.heading && (
               <h2 className="font-heading text-base text-ink">{section.heading}</h2>
             )}
-            {section.body.map((paragraph) => (
-              <p key={paragraph} className="mt-2 text-sm leading-relaxed text-ink/75">
-                {paragraph}
-              </p>
-            ))}
+            {section.body.length > 1 ? (
+              <ul className="mt-3 space-y-2.5">
+                {section.body.map((item) => (
+                  <li key={item} className="flex gap-2.5 text-sm leading-relaxed text-ink/75">
+                    <Check size={15} className="mt-0.5 shrink-0 text-quetzal" aria-hidden="true" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p className="mt-2 text-sm leading-relaxed text-ink/75">{section.body[0]}</p>
+            )}
           </div>
         ))}
       </div>

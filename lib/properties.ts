@@ -10,25 +10,29 @@ export interface Property {
   highlights: string[];
   amenities: string[];
   /**
-   * Real Guesty listing _id, pulled from the Open API on 2026-07-09.
-   * `undefined` means this unit isn't in Guesty yet - the booking CTA
-   * falls back to WhatsApp-only in that case (see lib/guesty.ts).
+   * Real Guesty listing _id, pulled from the Open API on 2026-07-09 and
+   * confirmed by Zac. `undefined` means this unit isn't in Guesty yet -
+   * the booking CTA falls back to WhatsApp-only in that case (see
+   * lib/guesty.ts).
    */
   guestyListingId?: string;
+  /** Paths under /public/images/properties - real photos, roughly matched. */
+  photos?: string[];
 }
 
 export const LOCATIONS: Record<
   LocationSlug,
-  { name: string; blurb: string }
+  { name: string; blurb: string; heroPhoto?: string }
 > = {
   "guatemala-city": {
     name: "Guatemala City",
-    blurb:
-      "Zona 11 and Zona 14 apartments with pool, gym and 24/7 security.",
+    blurb: "Zona 11 apartments in Parque San Jorge and Parque 14, with pool, gym and 24/7 security.",
+    heroPhoto: "/images/properties/lounge-room-zona-11-alt.jpg",
   },
   antigua: {
     name: "Antigua Guatemala",
     blurb: "A loft and a house in the heart of colonial Antigua.",
+    heroPhoto: "/images/properties/antigua.png",
   },
   "el-paredon": {
     name: "El Paredon",
@@ -36,65 +40,84 @@ export const LOCATIONS: Record<
   },
 };
 
+const ZONA_11_PHOTOS = [
+  "/images/properties/main-bedroom-zona-11.jpg",
+  "/images/properties/kitchen-zona-11.jpg",
+  "/images/properties/lounge-room-zona-11.jpg",
+];
+
 export const PROPERTIES: Property[] = [
   {
     slug: "zona-11-luxury-king-pool-gym",
     name: "Luxury King Bed | Pool & Gym",
     location: "guatemala-city",
-    neighborhood: "Zona 11, San Jorge building",
+    neighborhood: "Zona 11, Parque San Jorge",
     sleeps: 2,
     bedrooms: 1,
     highlights: ["Pool access", "Gym access", "Co-working space", "24/7 security"],
     amenities: ["Pool", "Gym", "Co-working lounge", "24/7 security", "Elevator", "Wifi"],
     guestyListingId: "68817a0e13ac2b001f24a3f6", // PSJ | #317
+    photos: ZONA_11_PHOTOS,
   },
   {
     slug: "zona-11-high-level-volcano-view-king",
     name: "High-Level Volcano View King",
     location: "guatemala-city",
-    neighborhood: "Zona 11, San Jorge building",
+    neighborhood: "Zona 11, Parque San Jorge",
     sleeps: 2,
     bedrooms: 1,
     highlights: ["High floor", "Volcano view", "Pool access", "Gym access"],
     amenities: ["Pool", "Gym", "Co-working lounge", "24/7 security", "Elevator", "Wifi"],
-    // AMBIGUOUS - Guesty has 3 active "volcano view" PSJ units (#1819,
-    // #1919, #1820) and our seed only has 2 volcano-view entries. Zac
-    // needs to confirm which listing ID is which before we pick one.
-    guestyListingId: undefined,
+    guestyListingId: "6881799f01272a0010ea99a8", // PSJ | #1819
+    photos: ZONA_11_PHOTOS,
+  },
+  {
+    slug: "zona-11-skyline-volcano-view",
+    name: "Skyline Volcano View",
+    location: "guatemala-city",
+    neighborhood: "Zona 11, Parque San Jorge",
+    sleeps: 2,
+    bedrooms: 1,
+    highlights: ["Volcano view", "Skyline view", "Pool access", "Gym access"],
+    amenities: ["Pool", "Gym", "Co-working lounge", "24/7 security", "Elevator", "Wifi"],
+    guestyListingId: "68817b105d163d0021cd3ef3", // PSJ | #1820
+    photos: ZONA_11_PHOTOS,
+  },
+  {
+    slug: "zona-11-volcano-and-pool-view",
+    name: "Volcano & Pool View King",
+    location: "guatemala-city",
+    neighborhood: "Zona 11, Parque San Jorge",
+    sleeps: 2,
+    bedrooms: 1,
+    highlights: ["Volcano view", "Pool view", "Pool access", "Gym access"],
+    amenities: ["Pool", "Gym", "Co-working lounge", "24/7 security", "Elevator", "Wifi"],
+    guestyListingId: "688179fe71e6080017d1bb6a", // PSJ | #1919
+    photos: ZONA_11_PHOTOS,
   },
   {
     slug: "zona-11-high-level-city-view",
     name: "High-Level City View",
     location: "guatemala-city",
-    neighborhood: "Zona 11, San Jorge building",
+    neighborhood: "Zona 11, Parque San Jorge",
     sleeps: 2,
     bedrooms: 1,
     highlights: ["High floor", "City view", "Pool access", "Gym access"],
     amenities: ["Pool", "Gym", "Co-working lounge", "24/7 security", "Elevator", "Wifi"],
     guestyListingId: "68817975f821b0002245a032", // PSJ | #1918
+    photos: ZONA_11_PHOTOS,
   },
   {
-    slug: "zona-11-volcano-view",
-    name: "Volcano View",
+    slug: "zona-11-a1503-three-bedroom",
+    name: "A1503 Three-Bedroom Apartment",
     location: "guatemala-city",
-    neighborhood: "Zona 11, San Jorge building",
-    sleeps: 2,
-    bedrooms: 1,
-    highlights: ["Volcano view", "Pool access", "Gym access"],
-    amenities: ["Pool", "Gym", "Co-working lounge", "24/7 security", "Elevator", "Wifi"],
-    // AMBIGUOUS - see note on zona-11-high-level-volcano-view-king above.
-    guestyListingId: undefined,
-  },
-  {
-    slug: "zona-14-three-bedroom",
-    name: "Zona 14 Three-Bedroom Apartment",
-    location: "guatemala-city",
-    neighborhood: "Zona 14",
+    neighborhood: "Zona 11, Parque 14 (A1503)",
     sleeps: 6,
     bedrooms: 3,
     highlights: ["Largest unit", "High floor", "Airport & city views"],
     amenities: ["Elevator", "24/7 security", "Wifi", "Full kitchen"],
     guestyListingId: "68b3b8f1d4211c00120cd5cc", // Parque 14 - 1503
+    photos: ZONA_11_PHOTOS,
   },
   {
     slug: "antigua-central-king-loft",
@@ -106,6 +129,7 @@ export const PROPERTIES: Property[] = [
     highlights: ["Volcano view", "Walk to Parque Central"],
     amenities: ["Wifi", "Kitchenette", "Rooftop access"],
     guestyListingId: "6881797de27463001384a290", // Antigua Loft
+    photos: ["/images/properties/antigua-loft-room.avif"],
   },
   {
     slug: "antigua-three-bedroom-house",
@@ -117,6 +141,10 @@ export const PROPERTIES: Property[] = [
     highlights: ["5 beds", "Heart of Antigua", "Full house"],
     amenities: ["Wifi", "Full kitchen", "Private entrance", "Courtyard"],
     guestyListingId: "688179a755d65a0011e18bc5", // Antigua Entire Casa
+    photos: [
+      "/images/properties/antigua-casa-bedroom.png",
+      "/images/properties/antigua-kitchen.png",
+    ],
   },
   {
     slug: "el-paredon-off-grid-camping",
@@ -127,7 +155,7 @@ export const PROPERTIES: Property[] = [
     bedrooms: 0,
     highlights: ["250m from the beach", "Off-grid", "Surf town"],
     amenities: ["Shared bathroom", "Hammocks", "Solar power"],
-    // Not in Guesty at all yet (0 results for El Paredon in the account).
+    // Not in Guesty at all - booking CTA is WhatsApp-only for this one.
     guestyListingId: undefined,
   },
 ];
