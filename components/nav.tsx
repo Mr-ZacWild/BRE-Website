@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
@@ -29,6 +28,10 @@ export function Nav({ lang, dict }: { lang: Locale; dict: Dictionary }) {
     return () => window.removeEventListener("scroll", onScroll);
   }, [isHome]);
 
+  // Ignore any stale scroll-derived state once we've navigated off the
+  // homepage, rather than resetting it inside the effect above.
+  const showTransparent = isHome && transparent;
+
   const links = [
     { href: `${prefix}/properties`, label: dict.nav.properties },
     { href: `${prefix}/about`, label: dict.nav.about },
@@ -47,7 +50,7 @@ export function Nav({ lang, dict }: { lang: Locale; dict: Dictionary }) {
   return (
     <header
       className={`fixed top-0 z-40 w-full transition-colors duration-300 ${
-        transparent ? "bg-transparent" : "bg-quetzal"
+        showTransparent ? "bg-transparent" : "bg-quetzal"
       }`}
     >
       <input
@@ -58,37 +61,39 @@ export function Nav({ lang, dict }: { lang: Locale; dict: Dictionary }) {
         aria-label="Toggle menu"
       />
 
-      <div
-        className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 peer-checked:[&_.icon-menu]:hidden peer-checked:[&_.icon-close]:block"
-      >
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between pl-2 pr-5 peer-checked:[&_.icon-menu]:hidden peer-checked:[&_.icon-close]:block">
         <label
           htmlFor="mobile-menu-toggle"
-          className="flex cursor-pointer items-center gap-2 text-crema"
+          className="cursor-pointer rounded-full p-2.5 text-crema transition-colors hover:bg-crema/15"
           aria-label="Open menu"
         >
-          <span
-            className="flex h-8 w-8 items-center justify-center rounded-full bg-mint"
-            aria-hidden="true"
-          >
-            <Image
-              src="/images/brand/hummingbird-logo-small.png"
-              alt=""
-              width={20}
-              height={20}
-              className="h-5 w-5 object-contain"
-            />
-          </span>
-          <span className="font-heading text-sm tracking-wide">buen rollo</span>
-          <Menu size={20} className="icon-menu ml-1" aria-hidden="true" />
-          <X size={20} className="icon-close ml-1 hidden" aria-hidden="true" />
+          <Menu size={22} className="icon-menu" aria-hidden="true" />
+          <X size={22} className="icon-close hidden" aria-hidden="true" />
         </label>
 
-        <Link
-          href={`${prefix}/properties`}
-          className="rounded-md bg-coral px-4 py-2 text-sm font-medium text-crema transition-opacity hover:opacity-90"
-        >
-          {dict.nav.checkAvailability}
-        </Link>
+        <div className="flex items-center gap-3">
+          <Link
+            href={localizePath(pathname, otherLocale)}
+            className="flex overflow-hidden rounded-full border border-crema/35 text-xs font-medium text-crema"
+          >
+            <span
+              className={`px-2.5 py-1 ${lang === "en" ? "bg-crema/25" : ""}`}
+            >
+              EN
+            </span>
+            <span
+              className={`px-2.5 py-1 ${lang === "es" ? "bg-crema/25" : ""}`}
+            >
+              ES
+            </span>
+          </Link>
+          <Link
+            href={`${prefix}/properties`}
+            className="rounded-md bg-coral px-4 py-2 text-sm font-medium text-crema transition-opacity hover:opacity-90"
+          >
+            {dict.nav.checkAvailability}
+          </Link>
+        </div>
       </div>
 
       <div className="hidden border-t border-crema/10 bg-quetzal px-5 pb-5 peer-checked:block">
@@ -107,20 +112,6 @@ export function Nav({ lang, dict }: { lang: Locale; dict: Dictionary }) {
               {link.label}
             </Link>
           ))}
-          <Link
-            href={localizePath(pathname, otherLocale)}
-            className="text-sm text-crema/70"
-            onClick={closeMenu}
-          >
-            {dict.common.languageSwitchLabel}
-          </Link>
-          <Link
-            href={`${prefix}/properties`}
-            className="rounded-md bg-coral px-4 py-2 text-center text-sm font-medium text-crema"
-            onClick={closeMenu}
-          >
-            {dict.nav.checkAvailability}
-          </Link>
         </div>
       </div>
     </header>

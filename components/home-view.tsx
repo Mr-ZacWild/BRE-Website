@@ -6,6 +6,7 @@ import { REVIEWS } from "@/lib/reviews";
 import { Hero } from "./hero";
 import { Intro } from "./intro";
 import { TrustBar } from "./trust-bar";
+import { TrustedBy } from "./trusted-by";
 import { WhyBookDirect } from "./why-book-direct";
 import { PropertyCard } from "./property-card";
 import { ReviewCard } from "./review-card";
@@ -25,6 +26,7 @@ export function HomeView({ lang, dict }: { lang: Locale; dict: Dictionary }) {
       <Hero />
       <Intro lang={lang} dict={dict} />
       <TrustBar />
+      <TrustedBy />
       <WhyBookDirect />
 
       <section className="mx-auto max-w-6xl px-5 py-16">
