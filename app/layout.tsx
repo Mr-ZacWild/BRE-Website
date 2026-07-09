@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Fraunces } from "next/font/google";
 import "./globals.css";
+import { SITE_URL } from "@/lib/site";
 
 const fraunces = Fraunces({
   variable: "--font-fraunces",
@@ -9,13 +10,27 @@ const fraunces = Fraunces({
   weight: ["400", "500"],
 });
 
+const description =
+  "Boutique apartments and off-grid stays in Guatemala City, Antigua Guatemala and El Paredon. Book direct, meet the hosts.";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "Buen Rollo Escapes",
     template: "%s | Buen Rollo Escapes",
   },
-  description:
-    "Boutique apartments and off-grid stays in Guatemala City, Antigua Guatemala and El Paredon. Book direct, meet the hosts.",
+  description,
+  openGraph: {
+    title: "Buen Rollo Escapes",
+    description,
+    siteName: "Buen Rollo Escapes",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Buen Rollo Escapes",
+    description,
+  },
 };
 
 export default function RootLayout({
