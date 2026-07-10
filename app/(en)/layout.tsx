@@ -1,6 +1,7 @@
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { WhatsAppFloat } from "@/components/whatsapp-float";
+import { MusicToggle } from "@/components/music-toggle";
 import { en } from "@/lib/i18n/dictionaries/en";
 
 export default function EnglishLayout({
@@ -14,6 +15,7 @@ export default function EnglishLayout({
       <main className="flex-1 pt-16">{children}</main>
       <Footer lang="en" dict={en} />
       <WhatsAppFloat lang="en" />
+      <MusicToggle />
     </>
   );
 }
