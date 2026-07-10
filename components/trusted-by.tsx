@@ -1,15 +1,21 @@
 import Image from "next/image";
 
-// Text wordmarks for now (not official logo files) to avoid implying an
-// endorsement/partnership we don't have on file - swap for real logo
-// assets once Zac confirms usage rights, or drop any platform we're not
-// actually listed on. "Google" here means Google Search/Maps presence,
-// not a booking platform - confirm intent before shipping.
-const PLATFORMS = ["Booking.com", "Vrbo", "Expedia", "Google"];
+// Real logo files from Zac's Drive folder. Height is fixed and equal for
+// all of them (object-contain, width auto) so they read as visually even
+// despite very different native aspect ratios (Airbnb/Google are near-
+// square, Booking.com/Expedia are wide wordmarks).
+// TODO: Zac's own Guesty dashboard shows 0 connected listings on Expedia
+// (vs 8 on Airbnb, 8 on Booking.com) - confirm we're actually live there
+// before shipping this, or it reads as a false "also bookable on" claim.
+const LOGOS = [
+  { src: "/images/trust/airbnb-official-logo.png", alt: "Airbnb" },
+  { src: "/images/trust/booking-com-logo.png", alt: "Booking.com" },
+  { src: "/images/trust/vrbo-logo.png", alt: "Vrbo" },
+  { src: "/images/trust/expedia-logo.png", alt: "Expedia" },
+  { src: "/images/trust/google-logo.png", alt: "Google" },
+];
 
 export function TrustedBy() {
-  const track = [...PLATFORMS];
-
   return (
     <div className="overflow-hidden border-b border-quetzal/10 bg-crema py-6">
       <p className="text-center text-xs uppercase tracking-widest text-sage">
@@ -19,20 +25,15 @@ export function TrustedBy() {
         <div className="flex w-max animate-[marquee_26s_linear_infinite] items-center gap-16 group-hover:[animation-play-state:paused]">
           {[0, 1].map((copy) => (
             <div key={copy} className="flex shrink-0 items-center gap-16 pr-16">
-              <Image
-                src="/images/trust/airbnb-official-logo.png"
-                alt="Airbnb"
-                width={80}
-                height={80}
-                className="h-14 w-14 object-contain opacity-70 sm:h-16 sm:w-16"
-              />
-              {track.map((name) => (
-                <span
-                  key={name}
-                  className="whitespace-nowrap font-heading text-3xl text-quetzal/50 sm:text-4xl"
-                >
-                  {name}
-                </span>
+              {LOGOS.map((logo) => (
+                <Image
+                  key={logo.alt}
+                  src={logo.src}
+                  alt={logo.alt}
+                  width={160}
+                  height={64}
+                  className="h-10 w-auto object-contain opacity-70 sm:h-12"
+                />
               ))}
             </div>
           ))}
