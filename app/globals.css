@@ -47,6 +47,20 @@ button {
   }
 }
 
+/* Same speed as marquee (one copy-width per animation duration), but
+   for a track made of 4 identical copies instead of 2 - needed so the
+   scrolling content is always wider than the viewport. With only 2
+   copies, a wide screen can run out of content before the loop resets,
+   which shows up as a sudden empty gap. */
+@keyframes marquee-quarter {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-25%);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

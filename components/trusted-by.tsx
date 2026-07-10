@@ -25,8 +25,8 @@ export function TrustedBy() {
         Also bookable on
       </p>
       <div className="group relative mt-6 overflow-hidden">
-        <div className="flex w-max animate-[marquee_26s_linear_infinite] items-center group-hover:[animation-play-state:paused]">
-          {[0, 1].map((copy) => (
+        <div className="flex w-max animate-[marquee-quarter_26s_linear_infinite] items-center group-hover:[animation-play-state:paused]">
+          {[0, 1, 2, 3].map((copy) => (
             <div key={copy} className="flex shrink-0 items-center gap-16 pr-16">
               {LOGOS.map((logo) => (
                 <Image
