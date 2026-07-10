@@ -8,11 +8,11 @@ import Image from "next/image";
 // (vs 8 on Airbnb, 8 on Booking.com) - confirm we're actually live there
 // before shipping this, or it reads as a false "also bookable on" claim.
 const LOGOS = [
-  { src: "/images/trust/airbnb-official-logo.png", alt: "Airbnb" },
-  { src: "/images/trust/booking-com-logo.png", alt: "Booking.com" },
-  { src: "/images/trust/vrbo-logo.png", alt: "Vrbo" },
-  { src: "/images/trust/expedia-logo.png", alt: "Expedia" },
-  { src: "/images/trust/google-logo.png", alt: "Google" },
+  { src: "/images/trust/airbnb-official-logo.png", alt: "Airbnb", big: true },
+  { src: "/images/trust/booking-com-logo.png", alt: "Booking.com", big: false },
+  { src: "/images/trust/vrbo-logo.png", alt: "Vrbo", big: true },
+  { src: "/images/trust/expedia-logo.png", alt: "Expedia", big: false },
+  { src: "/images/trust/google-logo.png", alt: "Google", big: false },
 ];
 
 export function TrustedBy() {
@@ -22,7 +22,7 @@ export function TrustedBy() {
         Also bookable on
       </p>
       <div className="group relative mt-6 overflow-hidden">
-        <div className="flex w-max animate-[marquee_26s_linear_infinite] items-center gap-16 group-hover:[animation-play-state:paused]">
+        <div className="flex w-max animate-[marquee_26s_linear_infinite] items-center group-hover:[animation-play-state:paused]">
           {[0, 1].map((copy) => (
             <div key={copy} className="flex shrink-0 items-center gap-16 pr-16">
               {LOGOS.map((logo) => (
@@ -32,7 +32,9 @@ export function TrustedBy() {
                   alt={logo.alt}
                   width={160}
                   height={64}
-                  className="h-10 w-auto object-contain opacity-70 sm:h-12"
+                  className={`w-auto object-contain opacity-70 ${
+                    logo.big ? "h-14 sm:h-16" : "h-10 sm:h-12"
+                  }`}
                 />
               ))}
             </div>

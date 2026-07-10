@@ -28,7 +28,7 @@ export const LOCATIONS: Record<
 > = {
   "guatemala-city": {
     name: "Guatemala City",
-    blurb: "Zona 11 apartments in Parque San Jorge and Parque 14, with pool, gym and 24/7 security.",
+    blurb: "Zona 11 apartments in Parque San Jorge, plus a Zona 14 apartment in Parque 14, all with pool, gym and 24/7 security.",
     heroPhoto: "/images/properties/lounge-room-zona-11-alt.jpg",
   },
   antigua: {
@@ -39,6 +39,7 @@ export const LOCATIONS: Record<
   "el-paredon": {
     name: "El Paredon",
     blurb: "Off-grid beach camping, 250m from the surf.",
+    heroPhoto: "/images/properties/el-paredon.png",
   },
 };
 
@@ -123,13 +124,11 @@ export const PROPERTIES: Property[] = [
     mapEmbedSrc: PARQUE_SAN_JORGE_MAP,
   },
   {
-    // NOTE: Zac has called this property's zone both "Zona 11" (2026-07-09)
-    // and "Zona 14" (2026-07-10) in different messages - neighborhood text
-    // below needs his final confirmation either way. Not blocking the map.
-    slug: "zona-11-a1503-three-bedroom",
+    // Confirmed by Zac 2026-07-10: this unit is Zona 14, not Zona 11.
+    slug: "zona-14-a1503-three-bedroom",
     name: "A1503 Three-Bedroom Apartment",
     location: "guatemala-city",
-    neighborhood: "Zona 11, Parque 14 (A1503)",
+    neighborhood: "Zona 14, Parque 14 (A1503)",
     sleeps: 6,
     bedrooms: 3,
     highlights: ["Largest unit", "High floor", "Airport & city views"],
@@ -178,6 +177,7 @@ export const PROPERTIES: Property[] = [
     amenities: ["Shared bathroom", "Hammocks", "Solar power"],
     // Not in Guesty at all - booking CTA is WhatsApp-only for this one.
     guestyListingId: undefined,
+    photos: ["/images/properties/el-paredon.png"],
   },
 ];
 
