@@ -103,9 +103,19 @@ export function PropertyDetailView({
 
           <h2 className="mt-8 font-heading text-lg text-ink">Location</h2>
           <p className="mt-2 max-w-xl text-sm text-ink/70">{location.blurb}</p>
-          <div className="mt-3 h-56 rounded-xl border border-quetzal/10 bg-mint/30 flex items-center justify-center text-xs text-ink/50">
-            Map embed placeholder
-          </div>
+          {property.mapEmbedSrc ? (
+            <iframe
+              src={property.mapEmbedSrc}
+              title={`Map of ${property.name}`}
+              className="mt-3 h-56 w-full rounded-xl border-0"
+              loading="lazy"
+              referrerPolicy="strict-origin-when-cross-origin"
+            />
+          ) : (
+            <div className="mt-3 h-56 rounded-xl border border-quetzal/10 bg-mint/30 flex items-center justify-center text-xs text-ink/50">
+              Map embed placeholder
+            </div>
+          )}
 
           <h2 className="mt-8 font-heading text-lg text-ink">House rules</h2>
           <p className="mt-2 max-w-xl text-sm text-ink/70">
