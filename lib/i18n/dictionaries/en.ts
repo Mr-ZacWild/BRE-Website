@@ -6,6 +6,7 @@ export interface Dictionary {
     antigua: string;
     elParedon: string;
     about: string;
+    trust: string;
     faq: string;
     contact: string;
     blog: string;
@@ -39,13 +40,14 @@ export const en: Dictionary = {
     antigua: "Antigua",
     elParedon: "El Paredon",
     about: "About",
+    trust: "Trust & Safety",
     faq: "FAQ",
     contact: "Contact",
     blog: "Guides",
-    checkAvailability: "Check availability",
+    checkAvailability: "Message us on WhatsApp",
   },
   common: {
-    checkAvailability: "Check availability",
+    checkAvailability: "Message us on WhatsApp",
     whatsapp: "WhatsApp",
     whatsappUs: "WhatsApp us",
     viewProperty: "View property",

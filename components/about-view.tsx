@@ -1,4 +1,16 @@
-import { ImagePlaceholder } from "./image-placeholder";
+import Image from "next/image";
+
+// Real, relevant Guatemala imagery standing in until real team/property
+// photos are supplied - deliberately NOT stock photos of strangers'
+// faces pretending to be the team, since that's a different, worse kind
+// of misleading than scenery. Swap for real photos of Zac/the team when
+// available.
+const TEAM_PHOTO = "/images/stock/antigua-sunset-cerro-de-la-cruz.jpg";
+const GRID_PHOTOS = [
+  "/images/stock/lake-atitlan-dock-volcano.jpg",
+  "/videos/hero-poster.jpg",
+  "/images/stock/guatemala-city-aerial.jpg",
+];
 
 export function AboutView() {
   return (
@@ -21,10 +33,9 @@ export function AboutView() {
         just happen to hold the keys now.
       </p>
 
-      <ImagePlaceholder
-        label="The Buen Rollo team photo"
-        className="mt-8 h-64 w-full rounded-xl"
-      />
+      <div className="relative mt-8 h-64 w-full overflow-hidden rounded-xl">
+        <Image src={TEAM_PHOTO} alt="Antigua Guatemala" fill className="object-cover" priority />
+      </div>
 
       <h2 className="mt-12 font-heading text-xl text-ink">Why these colors</h2>
       <p className="mt-3 text-ink/75">
@@ -64,13 +75,10 @@ export function AboutView() {
       </p>
 
       <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3">
-        {[1, 2, 3].map((n) => (
-          <ImagePlaceholder
-            key={n}
-            label={`Team photo ${n}`}
-            className="h-36 rounded-xl"
-            tone="sage"
-          />
+        {GRID_PHOTOS.map((src) => (
+          <div key={src} className="relative h-36 overflow-hidden rounded-xl">
+            <Image src={src} alt="Guatemala" fill className="object-cover" />
+          </div>
         ))}
       </div>
 

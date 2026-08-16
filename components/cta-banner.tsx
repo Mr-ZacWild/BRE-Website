@@ -13,20 +13,20 @@ export function CtaBanner({ lang, dict }: { lang: Locale; dict: Dictionary }) {
           {lang === "es" ? "¿Listos para la buena vibra?" : "Ready for good vibes?"}
         </p>
         <div className="flex gap-3">
-          <Link
-            href={`${prefix}/properties`}
-            className="rounded-md bg-quetzal px-5 py-2.5 text-sm font-medium text-crema"
-          >
-            {dict.common.checkAvailability}
-          </Link>
           <a
             href={getWhatsAppUrl(lang)}
             target="_blank"
             rel="noopener noreferrer"
+            className="rounded-md bg-quetzal px-5 py-2.5 text-sm font-medium text-crema"
+          >
+            {dict.common.checkAvailability}
+          </a>
+          <Link
+            href={`${prefix}/properties`}
             className="rounded-md border border-crema/70 px-5 py-2.5 text-sm text-crema"
           >
-            {dict.common.whatsappUs}
-          </a>
+            {lang === "es" ? "Ver propiedades" : "View properties"}
+          </Link>
         </div>
       </div>
     </section>

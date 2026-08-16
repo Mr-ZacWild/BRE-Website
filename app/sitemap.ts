@@ -10,12 +10,13 @@ const STATIC_PATHS = [
   "/guatemala-city",
   "/el-paredon",
   "/about",
+  "/trust",
   "/faq",
   "/contact",
   "/blog",
-  "/terms",
-  "/privacy",
-  "/cancellation-policy",
+  // Terms/privacy/cancellation-policy are deliberately left out - they're
+  // set to noindex (see their page.tsx metadata) so Google's attention
+  // stays on money pages, not legal boilerplate.
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

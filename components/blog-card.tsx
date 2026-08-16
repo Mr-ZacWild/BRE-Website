@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { BlogPost } from "@/lib/blog";
 import type { Locale } from "@/lib/i18n/config";
@@ -11,7 +12,19 @@ export function BlogCard({ post, lang }: { post: BlogPost; lang: Locale }) {
       href={`${prefix}/blog/${post.slug}`}
       className="group block overflow-hidden rounded-xl border border-quetzal/10 bg-white transition-shadow hover:shadow-md"
     >
-      <ImagePlaceholder label={post.heroImageSlot} className="h-40 w-full" tone="mint" />
+      {post.heroImage ? (
+        <div className="relative h-40 w-full overflow-hidden">
+          <Image
+            src={post.heroImage}
+            alt={post.heroImageSlot}
+            fill
+            className="object-cover transition-transform duration-300 group-hover:scale-105"
+            sizes="(max-width: 768px) 100vw, 33vw"
+          />
+        </div>
+      ) : (
+        <ImagePlaceholder label={post.heroImageSlot} className="h-40 w-full" tone="mint" />
+      )}
       <div className="p-4">
         <p className="text-xs uppercase tracking-wide text-sage">{post.category}</p>
         <h3 className="mt-1 font-heading text-base text-ink">{post.title}</h3>

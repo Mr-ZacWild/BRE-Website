@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { Locale } from "@/lib/i18n/config";
 import type { Dictionary } from "@/lib/i18n/dictionaries/en";
-import { PROPERTIES, LOCATIONS, type LocationSlug } from "@/lib/properties";
+import { PROPERTIES, LOCATIONS, getPropertyBySlug, type LocationSlug } from "@/lib/properties";
 import { REVIEWS } from "@/lib/reviews";
 import { Hero } from "./hero";
 import { Intro } from "./intro";
@@ -15,7 +15,15 @@ import { PropertyPhoto } from "./property-photo";
 
 export function HomeView({ lang, dict }: { lang: Locale; dict: Dictionary }) {
   const prefix = lang === "en" ? "" : "/es";
-  const featured = PROPERTIES.slice(0, 3);
+  // One from each place, not three Zona 11 units in a row - Zac wants the
+  // Antigua Casa and the Zona 14 (Parque 14) unit represented here too.
+  const featured = [
+    "zona-11-luxury-king-pool-gym",
+    "zona-14-a1503-three-bedroom",
+    "antigua-three-bedroom-house",
+  ]
+    .map((slug) => getPropertyBySlug(slug))
+    .filter((p): p is NonNullable<typeof p> => Boolean(p));
   const locationEntries = Object.entries(LOCATIONS) as [
     LocationSlug,
     (typeof LOCATIONS)[LocationSlug],
@@ -65,7 +73,7 @@ export function HomeView({ lang, dict }: { lang: Locale; dict: Dictionary }) {
               >
                 <PropertyPhoto
                   src={location.heroPhoto}
-                  alt={`${location.name} photo`}
+                  alt={`Boutique vacation rentals in ${location.name}, Guatemala`}
                   className="h-36 w-full"
                   tone="sage"
                 />

@@ -5,6 +5,8 @@ export interface BlogSection {
   body: string[];
   /** Label for a placeholder image slot right after this section. */
   imageSlot?: string;
+  /** Real image path under /public - shown instead of the placeholder box when set. */
+  image?: string;
 }
 
 export interface BlogPost {
@@ -14,11 +16,17 @@ export interface BlogPost {
   excerpt: string;
   /** Label for the hero image placeholder at the top of the post. */
   heroImageSlot: string;
+  /** Real hero image path under /public - shown instead of the placeholder box when set. */
+  heroImage?: string;
   /** Label for a suggested YouTube embed slot, if any. */
   videoSlot?: string;
+  /** Real YouTube video ID - shown as a live embed instead of the placeholder when set. Verified embeddable via the oEmbed API before adding. */
+  videoId?: string;
   sections: BlogSection[];
   /** Which of our locations this post should push readers toward booking. */
   relatedLocation?: LocationSlug;
+  /** Property slugs to link to inline (internal linking for SEO + booking). */
+  relatedProperties?: string[];
 }
 
 // Written 2026-07-10 as genuinely useful general travel content - not
@@ -33,8 +41,11 @@ export const BLOG_POSTS: BlogPost[] = [
     excerpt:
       "Cobblestone streets, three volcanoes on the skyline, and some of the best coffee in the world - here's how to spend your time in Antigua.",
     heroImageSlot: "Antigua street with volcano in the background, golden hour",
+    heroImage: "/images/stock/antigua-sunset-cerro-de-la-cruz.jpg",
     videoSlot: "Short walking-tour clip of Antigua's historic center",
+    videoId: "qkoZgm_-Z4M",
     relatedLocation: "antigua",
+    relatedProperties: ["antigua-central-king-loft", "antigua-three-bedroom-house"],
     sections: [
       {
         heading: "Why Antigua is worth slowing down for",
@@ -48,6 +59,7 @@ export const BLOG_POSTS: BlogPost[] = [
           "Start at Parque Central and the iconic Santa Catalina Arch, then duck into the ruined convents and churches scattered through town - many were damaged by earthquakes centuries ago and left partially standing, which gives Antigua its distinctive look.",
         ],
         imageSlot: "Santa Catalina Arch, Antigua",
+        image: "/images/stock/santa-catalina-arch-antigua.jpg",
       },
       {
         heading: "Catch the volcano views",
@@ -76,7 +88,9 @@ export const BLOG_POSTS: BlogPost[] = [
     excerpt:
       "Guatemala City doesn't get the hype Antigua does, but it's got museums, a genuine food scene, and it's where you'll actually land.",
     heroImageSlot: "Guatemala City skyline at dusk, Zona 14",
+    heroImage: "/images/stock/guatemala-city-aerial.jpg",
     relatedLocation: "guatemala-city",
+    relatedProperties: ["zona-11-luxury-king-pool-gym", "zona-14-a1503-three-bedroom"],
     sections: [
       {
         heading: "The underrated first (or last) stop",
@@ -96,6 +110,7 @@ export const BLOG_POSTS: BlogPost[] = [
           "Zona 10 and Zona 14 are Guatemala City's upscale districts - tree-lined streets, good restaurants, and shopping at Paseo Cayalá, a walkable outdoor plaza built to look like a small colonial town.",
         ],
         imageSlot: "Paseo Cayalá plaza",
+        image: "/images/stock/paseo-cayala-plaza.jpg",
       },
       {
         heading: "Zona 1: the historic center",
@@ -118,8 +133,11 @@ export const BLOG_POSTS: BlogPost[] = [
     excerpt:
       "Black sand beaches, no traffic, and a surf break that's still mostly a local secret - here's what to know about El Paredón.",
     heroImageSlot: "El Paredón beach at sunset, surfboards in sand",
+    heroImage: "/images/stock/el-paredon-surfboard-beach.jpg",
     videoSlot: "Drone or beach footage of El Paredón's coastline",
+    videoId: "0bHwSL9UUxA",
     relatedLocation: "el-paredon",
+    relatedProperties: ["el-paredon-off-grid-camping"],
     sections: [
       {
         heading: "What makes El Paredón different",
@@ -139,6 +157,7 @@ export const BLOG_POSTS: BlogPost[] = [
           "Beyond surfing, the routine here is simple: hammocks, black sand, and some of the best sunsets on this coastline. It's a genuine reset if you've spent a few days moving fast through Antigua or Guatemala City.",
         ],
         imageSlot: "Hammock on the beach, El Paredón",
+        image: "/images/stock/el-paredon-beach-sunset.jpg",
       },
       {
         heading: "Getting there",
@@ -161,6 +180,7 @@ export const BLOG_POSTS: BlogPost[] = [
     excerpt:
       "Three volcanoes, a dozen lakeside villages, and a boat network connecting all of them - here's how to actually see Lake Atitlán.",
     heroImageSlot: "Lake Atitlán with volcanoes in the background",
+    heroImage: "/images/stock/lake-atitlan-dock-volcano.jpg",
     sections: [
       {
         heading: "A lake ringed by volcanoes",
@@ -180,6 +200,7 @@ export const BLOG_POSTS: BlogPost[] = [
           "San Pedro has a younger, more backpacker/nomad energy - Spanish schools, cafes, and hiking up the San Pedro volcano itself for those who want a proper climb.",
         ],
         imageSlot: "San Pedro La Laguna waterfront",
+        image: "/images/stock/san-pedro-la-laguna.jpg",
       },
       {
         heading: "Santiago Atitlán",
@@ -202,7 +223,9 @@ export const BLOG_POSTS: BlogPost[] = [
     excerpt:
       "Ancient Maya temples rising out of the jungle canopy - here's how to plan a trip to one of Central America's most impressive ruins.",
     heroImageSlot: "Tikal's Temple IV view over the jungle canopy",
+    heroImage: "/videos/hero-poster.jpg",
     videoSlot: "Sunrise-over-Tikal timelapse or aerial footage",
+    videoId: "5H-0IFSkylI",
     sections: [
       {
         heading: "What Tikal actually is",
@@ -222,6 +245,7 @@ export const BLOG_POSTS: BlogPost[] = [
           "Temple IV is the tallest structure at the site and the classic photo spot - jungle canopy stretching to the horizon with the tops of other temples poking through. The Gran Plaza, with Temples I and II facing each other, is the most iconic single view in the park.",
         ],
         imageSlot: "Gran Plaza, Tikal, Temples I and II",
+        image: "/images/stock/tikal-temple-stock.jpg",
       },
       {
         heading: "Sunrise tours and wildlife",
@@ -244,6 +268,7 @@ export const BLOG_POSTS: BlogPost[] = [
     excerpt:
       "From landing at La Aurora to getting between Antigua, Lake Atitlán, and El Paredón - here's how to actually move around Guatemala.",
     heroImageSlot: "La Aurora International Airport or a shuttle van on a highland road",
+    heroImage: "/images/stock/guatemala-highland-building.jpg",
     sections: [
       {
         heading: "Landing at La Aurora (GUA)",
@@ -284,6 +309,7 @@ export const BLOG_POSTS: BlogPost[] = [
     excerpt:
       "The question every first-time visitor asks. Here's an honest, practical answer instead of a vague reassurance.",
     heroImageSlot: "A calm, welcoming street scene in Antigua or Zona 14",
+    heroImage: "/images/stock/antigua-calm-street.jpg",
     sections: [
       {
         heading: "The honest answer",
@@ -324,6 +350,7 @@ export const BLOG_POSTS: BlogPost[] = [
     excerpt:
       "Dry season, rainy season, and why the best time depends on whether you're headed to the highlands, the coast, or the jungle.",
     heroImageSlot: "Seasonal contrast shot - dry highland landscape or rainy-season green",
+    heroImage: "/images/stock/highland-seasonal-view.jpg",
     sections: [
       {
         heading: "Dry season vs rainy season",
@@ -364,7 +391,9 @@ export const BLOG_POSTS: BlogPost[] = [
     excerpt:
       "Same apartments, same hosts, same standard - booking direct just cuts out the platform fee and the middleman.",
     heroImageSlot: "A guest checking their phone with a Buen Rollo apartment in the background",
+    heroImage: "/images/stock/hand-phone-travel.jpg",
     relatedLocation: "guatemala-city",
+    relatedProperties: ["zona-11-luxury-king-pool-gym", "antigua-central-king-loft"],
     sections: [
       {
         heading: "It's the same property, either way",
@@ -393,7 +422,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         heading: "The reviews are real either way",
         body: [
-          "We've hosted 1,000+ guests with a 4.95 rating on Airbnb - booking direct doesn't change the standard, it just changes who benefits from the fee.",
+          "We're Airbnb Superhosts with 219 reviews and a 4.91 rating - booking direct doesn't change the standard, it just changes who benefits from the fee.",
         ],
       },
     ],
@@ -405,7 +434,9 @@ export const BLOG_POSTS: BlogPost[] = [
     excerpt:
       "Reliable wifi, a US-friendly time zone, and a genuinely lower cost of living - here's how to base a remote work trip in Guatemala.",
     heroImageSlot: "Laptop on a desk with a Guatemala City or Antigua view",
+    heroImage: "/images/stock/laptop-remote-work.jpg",
     relatedLocation: "guatemala-city",
+    relatedProperties: ["zona-11-luxury-king-pool-gym"],
     sections: [
       {
         heading: "Why Guatemala works for remote work",
@@ -435,6 +466,156 @@ export const BLOG_POSTS: BlogPost[] = [
         heading: "Visas and length of stay",
         body: [
           "Many nationalities get an initial 90-day tourist stay on arrival - always confirm current requirements for your passport before you book, since rules can change.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "best-boutique-stay-antigua-guatemala",
+    title: "Why Guests Keep Calling Us Antigua's Best Boutique Stay",
+    category: "Antigua",
+    excerpt:
+      "A five-star loft two blocks from Parque Central and a full house guests never want to check out of - here's what makes our Antigua stays stand out, in guests' own words.",
+    heroImageSlot: "Antigua courtyard or rooftop at golden hour, volcano in the background",
+    heroImage: "/images/stock/antigua-sunset-cerro-de-la-cruz.jpg",
+    relatedLocation: "antigua",
+    relatedProperties: ["antigua-central-king-loft", "antigua-three-bedroom-house"],
+    sections: [
+      {
+        heading: "Two stays, one standard",
+        body: [
+          "Antigua Guatemala has no shortage of places to stay, from big hotels to hundreds of Airbnbs scattered through the historic center. What keeps guests coming back to ours - and referring friends - comes down to two things: location and how we actually treat people once they've booked.",
+          "Both of our Antigua properties sit inside easy walking distance of Parque Central and the Santa Catalina Arch, and both come with a direct WhatsApp line to us, not a support ticket routed through a platform.",
+        ],
+      },
+      {
+        heading: "The Central King Loft",
+        body: [
+          "Our loft is the pick for couples and solo travelers who want to be in the middle of everything - a real king bed for extra comfort after a day of walking, volcano views, private rooftop access, a short walk to Antigua's best coffee shops, and a host who responds fast.",
+          '"Zac was very accommodating from start to finish. The loft was perfect for my stay and conveniently located. Everything was as described and I hope to visit and stay at this same Airbnb. I highly recommend!!" - Patrick, London, United Kingdom',
+        ],
+      },
+      {
+        heading: "The Antigua Three-Bedroom House",
+        body: [
+          "For families and groups, the full house gives you king beds throughout, a private entrance, a courtyard, and a full kitchen - enough space that nobody's tripping over each other after a long day of exploring.",
+          '"Found this gem on a last minute trip to Antigua. The home was so beautiful! So spacious, clean! We loved the king beds. Hosts were extremely welcoming and quick to respond. Definitely recommend - we\'re looking forward to staying here again." - Maria, Los Angeles, USA',
+        ],
+        imageSlot: "Antigua Three-Bedroom House courtyard or living room",
+        image: "/images/properties/antigua-casa-bedroom.png",
+      },
+      {
+        heading: "The numbers behind the reviews",
+        body: [
+          "The Central King Loft holds a 4.98 rating on Airbnb - every single review five stars, except one four-star. That kind of consistency is hard to fake, and guest after guest mentions the same things: fast communication, a spotless space, and a location they didn't want to leave.",
+        ],
+      },
+      {
+        heading: "Book direct and skip the platform fee",
+        body: [
+          "Both properties are bookable direct with us for the same rooms, same hosts, and none of the service fee Airbnb or Booking.com tack on. If you're planning an Antigua trip from the US or Europe, message us on WhatsApp before you book anywhere else.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "semana-santa-antigua-guatemala",
+    title: "Semana Santa in Antigua Guatemala: What to Know Before You Go",
+    category: "Antigua",
+    excerpt:
+      "Elaborate sawdust carpets, towering processions, and some of the most famous Holy Week celebrations on Earth - here's what to expect and how to plan around it.",
+    heroImageSlot: "Alfombra (sawdust carpet) on a cobblestone street in Antigua during Semana Santa",
+    heroImage: "/images/stock/semana-santa-procession.jpg",
+    videoSlot: "Procession footage - an anda float moving through Antigua's streets",
+    videoId: "NWDDGctHTPU",
+    relatedLocation: "antigua",
+    relatedProperties: ["antigua-central-king-loft", "antigua-three-bedroom-house"],
+    sections: [
+      {
+        heading: "Why Antigua's Semana Santa is world-famous",
+        body: [
+          "Semana Santa (Holy Week) is the week leading up to Easter Sunday, and Antigua Guatemala's celebrations are considered among the most elaborate anywhere in the world. The date moves every year with the Christian calendar, usually falling somewhere in March or April - always check the current year's dates before you book.",
+        ],
+      },
+      {
+        heading: "The alfombras (carpets)",
+        body: [
+          "The signature sight is the alfombras - intricate carpets stretching across entire cobblestone streets, made from dyed sawdust, flower petals, pine needles and fruit. Families and neighborhoods often work through the night to finish them, only for a procession to walk directly over the top a few hours later. Wander the streets early morning to catch them freshly finished, before the crowds and the processions arrive.",
+        ],
+        imageSlot: "Close-up detail of an alfombra pattern",
+        image: "/images/stock/alfombra-close-up.jpg",
+      },
+      {
+        heading: "The processions",
+        body: [
+          "Massive wooden floats called andas - some depicting scenes from the Passion of Christ, weighing well over a ton - are carried through the streets on the shoulders of dozens to over a hundred purple-robed carriers known as cucuruchos. Brass bands, incense, and slow, deliberate footwork make these processions as much a feat of endurance as a spectacle.",
+        ],
+      },
+      {
+        heading: "Good Friday is the peak",
+        body: [
+          "Viernes Santo (Good Friday) draws the largest crowds and the most elaborate carpets and processions of the week, including some that run from early morning well into the night. If you can only be in Antigua for one day of Semana Santa, this is it - but expect the streets to be genuinely packed.",
+        ],
+      },
+      {
+        heading: "Plan accommodation early",
+        body: [
+          "Antigua fills up months in advance for Semana Santa - it's one of the most in-demand weeks of the year for a very small town. If this is on your calendar, lock in a place to stay as early as you can rather than waiting until a few weeks out.",
+        ],
+      },
+      {
+        heading: "Where to stay",
+        body: [
+          "Our Central King Loft and Antigua Three-Bedroom House both sit inside walking distance of the historic center, where most of the main processions and carpets pass through - book direct and message us on WhatsApp with any questions about timing your trip around Holy Week.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "guatemala-city-airport-layover-guide",
+    title: "Guatemala City Airport Layover: What to Do Near GUA",
+    category: "Guatemala City",
+    excerpt:
+      "Long layover at La Aurora International Airport? Here's what's actually worth leaving the airport for, and how to judge if you have time.",
+    heroImageSlot: "La Aurora International Airport exterior or a Zona 13/14 street view",
+    heroImage: "/images/stock/guatemala-city-aerial.jpg",
+    relatedLocation: "guatemala-city",
+    relatedProperties: ["zona-11-luxury-king-pool-gym", "zona-14-a1503-three-bedroom"],
+    sections: [
+      {
+        heading: "You have more options than you think",
+        body: [
+          "La Aurora International Airport (GUA) sits in Zona 13, minutes from some of Guatemala City's best neighborhoods - Zona 10 and Zona 14 are both a short drive away. A long layover here doesn't have to mean sitting in the terminal the whole time.",
+        ],
+      },
+      {
+        heading: "How much time you actually need",
+        body: [
+          "As a rough guide, a layover of 4+ hours makes a short trip into the city realistic, factoring in immigration, luggage, and traffic both ways. Anything shorter and it's safer to stay airside - Guatemala City traffic can be unpredictable depending on the time of day.",
+        ],
+      },
+      {
+        heading: "Museo Miraflores",
+        body: [
+          "One of the closest worthwhile stops to the airport, Museo Miraflores in Zona 10 covers Maya history and artifacts and is a genuinely good way to fill two or three hours without straying far.",
+        ],
+      },
+      {
+        heading: "La Aurora Zoo",
+        body: [
+          "Also in Zona 13, right near the airport - one of the oldest zoos in Central America, and an easy, low-effort option if you're traveling with kids on a layover.",
+        ],
+      },
+      {
+        heading: "Zona 10 and Zona 14",
+        body: [
+          "If you have more time, Zona 10 and Zona 14 have Guatemala City's best restaurants and a genuinely walkable, modern feel - a good introduction to the country if this is your only stop before connecting onward.",
+        ],
+      },
+      {
+        heading: "If your layover turns into an overnight",
+        body: [
+          "Misconnected flights and long overnight layovers happen - our Zona 11 and Zona 14 apartments are a short transfer from the airport, with 24/7 security and fast WhatsApp support if your plans change last minute.",
         ],
       },
     ],

@@ -23,7 +23,7 @@ export function PropertyCard({
     >
       <PropertyPhoto
         src={property.photos?.[0]}
-        alt={`${property.name} photo`}
+        alt={`${property.name} - boutique vacation rental in ${property.neighborhood}`}
         className="h-44 w-full"
         tone="mint"
       />

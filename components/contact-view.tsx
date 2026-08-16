@@ -1,7 +1,7 @@
-import { Mail, MessageCircle } from "lucide-react";
 import type { Locale } from "@/lib/i18n/config";
 import type { Dictionary } from "@/lib/i18n/dictionaries/en";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
+import { WhatsAppIcon } from "./brand-icons";
 
 export function ContactView({ lang, dict }: { lang: Locale; dict: Dictionary }) {
   return (
@@ -20,7 +20,7 @@ export function ContactView({ lang, dict }: { lang: Locale; dict: Dictionary }) 
           rel="noopener noreferrer"
           className="flex items-center gap-3 rounded-lg border border-quetzal/15 bg-white p-4"
         >
-          <MessageCircle className="text-coral" aria-hidden="true" />
+          <WhatsAppIcon className="h-6 w-6" />
           <div>
             <p className="text-sm font-medium text-ink">
               <span aria-hidden="true">🇦🇺 </span>WhatsApp (English)
@@ -34,7 +34,7 @@ export function ContactView({ lang, dict }: { lang: Locale; dict: Dictionary }) 
           rel="noopener noreferrer"
           className="flex items-center gap-3 rounded-lg border border-quetzal/15 bg-white p-4"
         >
-          <MessageCircle className="text-coral" aria-hidden="true" />
+          <WhatsAppIcon className="h-6 w-6" />
           <div>
             <p className="text-sm font-medium text-ink">
               <span aria-hidden="true">🇬🇹 </span>WhatsApp (Spanish / Español)
@@ -43,18 +43,6 @@ export function ContactView({ lang, dict }: { lang: Locale; dict: Dictionary }) 
           </div>
         </a>
       </div>
-
-      <a
-        href="mailto:hello@buenrolloescapes.com"
-        className="mt-4 flex items-center gap-3 rounded-lg border border-quetzal/15 bg-white p-4"
-      >
-        <Mail className="text-quetzal" aria-hidden="true" />
-        <span className="text-sm text-ink">hello@buenrolloescapes.com</span>
-      </a>
-      <p className="mt-2 text-xs text-ink/40">
-        TODO: confirm this inbox is live on Google Workspace before launch -
-        a gmail.com address undermines the rest of the site.
-      </p>
     </div>
   );
 }

@@ -20,20 +20,20 @@ export function Intro({ lang, dict }: { lang: Locale; dict: Dictionary }) {
           Guatemala and El Paredon. Book direct, meet the hosts.
         </p>
         <div className="mt-7 flex flex-wrap gap-3">
-          <Link
-            href={`${prefix}/properties`}
-            className="rounded-md bg-coral px-6 py-3 text-sm font-medium text-crema transition-opacity hover:opacity-90"
-          >
-            {dict.common.checkAvailability}
-          </Link>
           <a
             href={getWhatsAppUrl(lang)}
             target="_blank"
             rel="noopener noreferrer"
+            className="rounded-md bg-coral px-6 py-3 text-sm font-medium text-crema transition-opacity hover:opacity-90"
+          >
+            {dict.common.checkAvailability}
+          </a>
+          <Link
+            href={`${prefix}/properties`}
             className="rounded-md border border-crema/60 px-6 py-3 text-sm text-crema"
           >
-            {dict.common.whatsappUs}
-          </a>
+            {lang === "es" ? "Ver todas las propiedades" : "See all properties"}
+          </Link>
         </div>
       </div>
     </section>

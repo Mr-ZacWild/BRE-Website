@@ -1,11 +1,13 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { localizePath, type Locale } from "@/lib/i18n/config";
 import type { Dictionary } from "@/lib/i18n/dictionaries/en";
+import { getWhatsAppUrl } from "@/lib/whatsapp";
 
 export function Nav({ lang, dict }: { lang: Locale; dict: Dictionary }) {
   const pathname = usePathname();
@@ -36,10 +38,12 @@ export function Nav({ lang, dict }: { lang: Locale; dict: Dictionary }) {
     { href: `${prefix}/properties`, label: dict.nav.properties },
     { href: `${prefix}/blog`, label: dict.nav.blog },
     { href: `${prefix}/about`, label: dict.nav.about },
+    { href: `${prefix}/trust`, label: dict.nav.trust },
     { href: `${prefix}/faq`, label: dict.nav.faq },
     { href: `${prefix}/contact`, label: dict.nav.contact },
   ];
 
+  const whatsappUrl = getWhatsAppUrl(lang);
   const otherLocale: Locale = lang === "en" ? "es" : "en";
   // Closes the drawer after a client-side navigation. The drawer itself
   // works with zero JS via the checkbox + CSS below - this is just a
@@ -62,17 +66,63 @@ export function Nav({ lang, dict }: { lang: Locale; dict: Dictionary }) {
         aria-label="Toggle menu"
       />
 
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between pl-2 pr-5 peer-checked:[&_.icon-menu]:hidden peer-checked:[&_.icon-close]:block">
+      <div
+        className={`relative mx-auto flex max-w-6xl items-center justify-between pl-2 pr-5 peer-checked:[&_.icon-menu]:hidden peer-checked:[&_.icon-close]:block ${
+          isHome ? "h-16 sm:h-28 lg:h-32" : "h-16"
+        }`}
+      >
         <label
           htmlFor="mobile-menu-toggle"
-          className="cursor-pointer rounded-full p-2.5 text-crema transition-colors hover:bg-crema/15"
+          className={`relative z-50 cursor-pointer rounded-full text-crema transition-colors ${
+            showTransparent ? "p-0" : "p-2.5 hover:bg-crema/15"
+          }`}
           aria-label="Open menu"
         >
           <Menu size={22} className="icon-menu" aria-hidden="true" />
           <X size={22} className="icon-close hidden" aria-hidden="true" />
         </label>
 
+        {isHome && (
+          <Link
+            href={home}
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+            aria-label="Buen Rollo Escapes home"
+          >
+            <Image
+              src="/images/brand/logo-full.png"
+              alt="Buen Rollo Escapes"
+              width={1005}
+              height={472}
+              className="h-9 w-auto sm:h-[90px] lg:h-[110px]"
+              priority
+            />
+          </Link>
+        )}
+
         <div className="flex items-center gap-3">
+          {showTransparent ? (
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`text-xs font-medium uppercase tracking-widest text-crema/90 underline-offset-4 transition-colors hover:text-crema hover:underline ${
+                isHome ? "hidden sm:inline-block" : ""
+              }`}
+            >
+              {dict.nav.checkAvailability}
+            </a>
+          ) : (
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`rounded-md bg-coral px-4 py-2 text-sm font-medium text-crema transition-opacity hover:opacity-90 ${
+                isHome ? "hidden sm:inline-block" : ""
+              }`}
+            >
+              {dict.nav.checkAvailability}
+            </a>
+          )}
           <Link
             href={localizePath(pathname, otherLocale)}
             className="flex overflow-hidden rounded-full border border-crema/35 text-xs font-medium text-crema"
@@ -88,25 +138,25 @@ export function Nav({ lang, dict }: { lang: Locale; dict: Dictionary }) {
               ES
             </span>
           </Link>
-          <Link
-            href={`${prefix}/properties`}
-            className="rounded-md bg-coral px-4 py-2 text-sm font-medium text-crema transition-opacity hover:opacity-90"
-          >
-            {dict.nav.checkAvailability}
-          </Link>
         </div>
       </div>
 
-      <div className="hidden border-t border-crema/10 bg-quetzal px-5 pb-5 peer-checked:block">
-        <div className="mx-auto flex max-w-6xl flex-col gap-4 pt-4">
-          <Link href={home} className="text-sm text-crema/90" onClick={closeMenu}>
+      <div
+        className="fixed inset-y-0 left-0 z-40 w-full max-w-sm -translate-x-full bg-quetzal/55 backdrop-blur-sm transition-transform duration-300 ease-out peer-checked:translate-x-0"
+      >
+        <div className="flex h-full flex-col justify-center gap-5 px-10 sm:px-12">
+          <Link
+            href={home}
+            className="font-heading text-2xl text-crema/95 transition-colors hover:text-crema sm:text-3xl"
+            onClick={closeMenu}
+          >
             {dict.nav.home}
           </Link>
           {links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm text-crema/90"
+              className="font-heading text-2xl text-crema/95 transition-colors hover:text-crema sm:text-3xl"
               aria-current={pathname === link.href ? "page" : undefined}
               onClick={closeMenu}
             >

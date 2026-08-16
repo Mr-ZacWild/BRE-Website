@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Fraunces } from "next/font/google";
 import "./globals.css";
 import { SITE_URL } from "@/lib/site";
+import { GoogleAnalytics } from "@/components/google-analytics";
 
 const fraunces = Fraunces({
   variable: "--font-fraunces",
@@ -75,6 +76,7 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col bg-crema text-ink">
+        <GoogleAnalytics />
         {children}
       </body>
     </html>

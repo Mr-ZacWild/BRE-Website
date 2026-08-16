@@ -15,12 +15,5 @@ export function EmbeddedForm({
     );
   }
 
-  return (
-    <iframe
-      src={src}
-      title={title}
-      className="h-[calc(100vh-64px)] w-full border-0"
-      loading="lazy"
-    />
-  );
+  return <iframe src={src} title={title} className="block h-dvh w-full border-0" />;
 }

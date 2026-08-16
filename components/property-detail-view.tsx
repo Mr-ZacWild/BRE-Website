@@ -1,9 +1,8 @@
-import { BedDouble, Users, Check } from "lucide-react";
+import { BedDouble, Bath, Users, Check } from "lucide-react";
 import type { Locale } from "@/lib/i18n/config";
 import type { Dictionary } from "@/lib/i18n/dictionaries/en";
 import type { Property } from "@/lib/properties";
 import { LOCATIONS } from "@/lib/properties";
-import { getGuestyBookingUrl } from "@/lib/guesty";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
 import { PropertyPhoto } from "./property-photo";
 
@@ -16,7 +15,6 @@ export function PropertyDetailView({
   lang: Locale;
   dict: Dictionary;
 }) {
-  const bookingUrl = getGuestyBookingUrl(property);
   const whatsappUrl = getWhatsAppUrl(lang, property);
   const location = LOCATIONS[property.location];
 
@@ -34,10 +32,18 @@ export function PropertyDetailView({
       "@type": "LocationFeatureSpecification",
       name: amenity,
     })),
+    ...(property.rating && {
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: property.rating.value,
+        reviewCount: property.rating.count,
+        bestRating: 5,
+      },
+    }),
   };
 
   return (
-    <div className="mx-auto max-w-6xl px-5 py-14">
+    <div className="mx-auto max-w-6xl px-5 py-14 pb-28 lg:pb-14">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -50,18 +56,18 @@ export function PropertyDetailView({
         {property.name}
       </h1>
 
-      <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
+      <div className="mt-6 grid h-80 grid-cols-2 gap-3 sm:h-96 sm:grid-cols-4">
         <PropertyPhoto
           src={property.photos?.[0]}
-          alt={`${property.name} photo 1`}
-          className="col-span-2 row-span-2 h-64 rounded-xl sm:h-full"
+          alt={`${property.name} in ${property.neighborhood} - ${property.highlights[0] ?? "boutique vacation rental"}`}
+          className="col-span-2 row-span-2 h-full rounded-xl"
         />
         {[2, 3, 4].map((n) => (
           <PropertyPhoto
             key={n}
             src={property.photos?.[n - 1]}
-            alt={`${property.name} photo ${n}`}
-            className="h-32 rounded-xl sm:h-full"
+            alt={`${property.name} - ${property.highlights[n - 1] ?? `photo ${n}`}`}
+            className="h-full rounded-xl"
             tone="sage"
           />
         ))}
@@ -69,7 +75,7 @@ export function PropertyDetailView({
 
       <div className="mt-10 grid gap-10 lg:grid-cols-3">
         <div className="lg:col-span-2">
-          <div className="flex gap-6 text-sm text-ink/70">
+          <div className="flex flex-wrap gap-6 text-sm text-ink/70">
             <span className="flex items-center gap-1.5">
               <Users size={16} aria-hidden="true" /> Sleeps {property.sleeps}
             </span>
@@ -79,7 +85,19 @@ export function PropertyDetailView({
                 ? `${property.bedrooms} bedroom${property.bedrooms > 1 ? "s" : ""}`
                 : "Camping tent"}
             </span>
+            <span className="flex items-center gap-1.5">
+              <BedDouble size={16} aria-hidden="true" />
+              {property.beds} bed{property.beds > 1 ? "s" : ""}
+            </span>
+            <span className="flex items-center gap-1.5">
+              <Bath size={16} aria-hidden="true" />
+              {property.bathrooms} bathroom{property.bathrooms > 1 ? "s" : ""}
+            </span>
           </div>
+
+          <p className="mt-6 max-w-2xl text-sm leading-relaxed text-ink/75">
+            {property.description}
+          </p>
 
           <h2 className="mt-8 font-heading text-lg text-ink">Highlights</h2>
           <ul className="mt-3 grid gap-2 sm:grid-cols-2">
@@ -125,33 +143,34 @@ export function PropertyDetailView({
         </div>
 
         <div className="h-fit rounded-xl border border-quetzal/10 bg-white p-5">
-          <p className="font-heading text-base text-ink">{dict.common.checkAvailability}</p>
-          <p className="mt-1 text-xs text-ink/60">
-            Rates and dates are managed in our booking calendar.
+          <p className="font-heading text-base text-ink">
+            {lang === "es" ? "¿Listos para reservar?" : "Ready to book?"}
           </p>
-          {bookingUrl && (
-            <a
-              href={bookingUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-4 block rounded-md bg-coral py-3 text-center text-sm font-medium text-crema"
-            >
-              {dict.common.checkAvailability}
-            </a>
-          )}
+          <p className="mt-1 text-xs text-ink/60">
+            {lang === "es"
+              ? "Escribenos directo por WhatsApp para fechas y precios."
+              : "Message us directly on WhatsApp for dates and pricing."}
+          </p>
           <a
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className={`block rounded-md text-center text-sm ${
-              bookingUrl
-                ? "mt-3 border border-quetzal/25 py-3 text-quetzal"
-                : "mt-4 bg-coral py-3 font-medium text-crema"
-            }`}
+            className="mt-4 block rounded-md bg-coral py-3 text-center text-sm font-medium text-crema"
           >
             {dict.common.whatsappUs}
           </a>
         </div>
+      </div>
+
+      <div className="fixed inset-x-0 bottom-0 z-30 border-t border-quetzal/10 bg-white/95 py-3 pl-5 pr-24 backdrop-blur lg:hidden">
+        <a
+          href={whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block rounded-md bg-coral py-3 text-center text-sm font-medium text-crema"
+        >
+          {dict.common.checkAvailability}
+        </a>
       </div>
     </div>
   );

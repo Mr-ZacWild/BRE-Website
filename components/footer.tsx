@@ -1,6 +1,11 @@
 import Link from "next/link";
 import type { Locale } from "@/lib/i18n/config";
 import type { Dictionary } from "@/lib/i18n/dictionaries/en";
+import { FacebookIcon, InstagramIcon } from "./brand-icons";
+import { VERIFIED_LISTINGS } from "@/lib/social-proof";
+
+const instagramUrl = VERIFIED_LISTINGS.find((l) => l.platform === "Instagram")?.url ?? "#";
+const facebookUrl = VERIFIED_LISTINGS.find((l) => l.platform === "Facebook")?.url ?? "#";
 
 export function Footer({ lang, dict }: { lang: Locale; dict: Dictionary }) {
   const prefix = lang === "en" ? "" : "/es";
@@ -16,6 +21,26 @@ export function Footer({ lang, dict }: { lang: Locale; dict: Dictionary }) {
             </p>
             <p className="mt-3 text-xs">{dict.footer.locations}</p>
             <p className="mt-1 text-xs text-crema/40">Registered office: Sheridan, Wyoming</p>
+            <div className="mt-4 flex items-center gap-3">
+              <a
+                href={instagramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="opacity-80 transition-opacity hover:opacity-100"
+              >
+                <InstagramIcon className="h-6 w-6" />
+              </a>
+              <a
+                href={facebookUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="opacity-80 transition-opacity hover:opacity-100"
+              >
+                <FacebookIcon className="h-6 w-6" />
+              </a>
+            </div>
           </div>
 
           <div>
@@ -55,13 +80,7 @@ export function Footer({ lang, dict }: { lang: Locale; dict: Dictionary }) {
 
         <div className="mt-10 flex flex-col gap-2 border-t border-crema/10 pt-6 text-xs text-crema/50 sm:flex-row sm:items-center sm:justify-between">
           <span>© {new Date().getFullYear()} Buen Rollo LLC</span>
-          <div className="flex items-center gap-4">
-            <span>{dict.footer.payments}</span>
-            {/* TODO: rename once Zac confirms what this Tally form is for */}
-            <Link href={`${prefix}/form`} className="text-crema/30 hover:text-crema/60">
-              Form
-            </Link>
-          </div>
+          <span>{dict.footer.payments}</span>
         </div>
       </div>
     </footer>

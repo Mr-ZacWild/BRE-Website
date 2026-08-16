@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { BlogPostView } from "@/components/blog-post-view";
 import { BLOG_POSTS, getBlogPostBySlug } from "@/lib/blog";
 import { es } from "@/lib/i18n/dictionaries/es";
+import { localeAlternates } from "@/lib/site";
 
 export function generateStaticParams() {
   return BLOG_POSTS.map((post) => ({ slug: post.slug }));
@@ -16,7 +17,11 @@ export async function generateMetadata({
   const { slug } = await params;
   const post = getBlogPostBySlug(slug);
   if (!post) return {};
-  return { title: `${post.title} | Buen Rollo Escapes`, description: post.excerpt };
+  return {
+    title: post.title,
+    description: post.excerpt,
+    alternates: localeAlternates(`/blog/${slug}`, "es"),
+  };
 }
 
 export default async function BlogPostPageEs({
