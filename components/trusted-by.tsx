@@ -25,7 +25,13 @@ export function TrustedBy() {
         Also bookable on
       </p>
       <div className="group relative mt-6 overflow-hidden">
-        <div className="flex w-max animate-[marquee-quarter_26s_linear_infinite] items-center group-hover:[animation-play-state:paused]">
+        {/* Pause-on-hover only applies on devices that actually have a
+            mouse. Without the (hover: hover) gate, tapping/scrolling past
+            this row on a touch device can trigger a "stuck" :hover state
+            (there's no pointer to move away and clear it), which freezes
+            the marquee for the rest of the visit - the exact bug Zac
+            reported on mobile. */}
+        <div className="flex w-max animate-[marquee-quarter_26s_linear_infinite] items-center [@media(hover:hover)]:group-hover:[animation-play-state:paused]">
           {[0, 1, 2, 3].map((copy) => (
             <div key={copy} className="flex shrink-0 items-center gap-16 pr-16">
               {LOGOS.map((logo) => (

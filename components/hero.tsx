@@ -10,12 +10,26 @@ export function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    // Autoplay is on by default in the markup below (works with JS
-    // disabled). If the visitor prefers reduced motion, stop it and
-    // just show the poster frame instead.
+    const video = videoRef.current;
+    if (!video) return;
+
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      videoRef.current?.pause();
+      video.pause();
+      return;
     }
+
+    // React never renders the `muted` HTML attribute on <video> during
+    // SSR (only sets it as a JS property after hydration) - see
+    // https://github.com/facebook/react/issues/10389. Mobile browsers
+    // check for the `muted` attribute at parse time before hydration
+    // runs, so the native autoplay attempt gets silently rejected and
+    // the video just sits on its poster frame. Setting .muted here and
+    // calling .play() explicitly is the standard fix.
+    video.muted = true;
+    video.play().catch(() => {
+      // Autoplay still blocked (e.g. data saver mode) - poster frame
+      // stays visible, which is a fine fallback.
+    });
   }, []);
 
   return (
