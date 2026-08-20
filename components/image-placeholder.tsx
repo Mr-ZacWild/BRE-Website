@@ -1,7 +1,7 @@
 import { ImageIcon } from "lucide-react";
 
 /**
- * Stand-in for real photography. Swap for next/image once Zac supplies
+ * Stand-in for real photography. Swap for next/image once the owner supplies
  * the photo set - keeps layout/aspect-ratio work usable in the meantime.
  */
 export function ImagePlaceholder({

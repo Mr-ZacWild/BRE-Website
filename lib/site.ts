@@ -1,4 +1,4 @@
-// TODO: confirm the final production domain with Zac before launch.
+// TODO: confirm the final production domain with the owner before launch.
 export const SITE_URL = "https://www.buenrolloescapes.com";
 
 /**
@@ -17,15 +17,11 @@ export function localeAlternates(path: string, lang: "en" | "es" = "en") {
   };
 }
 
-// Google Analytics (GA4) Measurement ID, e.g. "G-XXXXXXXXXX". Zac has an
-// existing GA property but wasn't sure of the ID as of 2026-08-16 - find
-// it under Admin > Data Streams > (the web stream) in analytics.google.com,
-// or in the old Google Sites embed code if it's still there. Analytics
-// stays off (no script loads at all) until this is set - see
-// components/google-analytics.tsx.
-export const GA_MEASUREMENT_ID: string | undefined = undefined;
+// Analytics runs through Google Tag Manager, not a direct GA4 script -
+// see lib/gtm.ts for the container ID placeholder and load logic, and
+// components/cookie-consent.tsx for the consent gate in front of it.
 
-// New Guest Forms (Tally, connected to Notion) - real URLs from Zac 2026-07-10.
+// New Guest Forms (Tally, connected to Notion) - real URLs from the owner 2026-07-10.
 // One per city/language combo - these are distinct forms, not translations
 // of the same form, so each gets its own standalone route (see
 // app/new-guest-form-en, -es, -antigua-en) rather than the site's usual
@@ -34,14 +30,14 @@ export const TALLY_FORMS = {
   guatemalaCityEn: "https://tally.so/r/zxvgj1?transparentBackground=1",
   guatemalaCityEs: "https://tally.so/r/LZNalO?transparentBackground=1",
   antiguaEn: "https://tally.so/r/ja4QVJ?transparentBackground=1",
-  // TODO(Zac): add antiguaEs once that form exists in Tally.
+  // TODO(the owner): add antiguaEs once that form exists in Tally.
 } as const;
 
 // Opt-in ambient music toggle (see components/music-toggle.tsx) - off by
-// default, visitor has to click. Deliberately left unset: the track Zac
+// default, visitor has to click. Deliberately left unset: the track the owner
 // sent 2026-07-10 was "Manu Chao - Me Gustas Tu," a commercially released
 // song. Playing a copyrighted commercial track on a public business site
 // needs a sync/performance license - do not ship this specific file
-// without Zac confirming he's licensed it. Point this at a royalty-free
+// without the owner confirming he's licensed it. Point this at a royalty-free
 // track (or a licensed one) under /public/audio/ instead.
 export const AMBIENT_MUSIC_URL: string | undefined = undefined;

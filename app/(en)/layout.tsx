@@ -2,6 +2,7 @@ import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { WhatsAppFloat } from "@/components/whatsapp-float";
 import { MusicToggle } from "@/components/music-toggle";
+import { CookieConsent } from "@/components/cookie-consent";
 import { en } from "@/lib/i18n/dictionaries/en";
 
 export default function EnglishLayout({
@@ -16,6 +17,7 @@ export default function EnglishLayout({
       <Footer lang="en" dict={en} />
       <WhatsAppFloat lang="en" />
       <MusicToggle />
+      <CookieConsent lang="en" />
     </>
   );
 }

@@ -3,7 +3,7 @@ export interface FaqItem {
   answer: string;
 }
 
-// TODO: confirm final wording with Zac, especially anything with a
+// TODO: confirm final wording with the owner, especially anything with a
 // specific number (deposit, minimum stay, quiet hours) - some of these
 // answers are reasonable defaults, not confirmed policy.
 export const FAQ_ITEMS: FaqItem[] = [

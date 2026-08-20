@@ -1,13 +1,13 @@
 import Image from "next/image";
 
-// Real logo files from Zac's Drive folder. Height is fixed and equal for
+// Real logo files from the owner's Drive folder. Height is fixed and equal for
 // all of them (object-contain, width auto) so they read as visually even
 // despite very different native aspect ratios (Airbnb/Google are near-
 // square, Booking.com/Expedia are wide wordmarks). width/height below are
 // each logo's REAL pixel dimensions - next/image uses these to set the
 // CSS aspect-ratio, and getting them wrong (e.g. one size for everyone)
 // makes w-auto compute the wrong width and leaves dead space in the box.
-// TODO: Zac's own Guesty dashboard shows 0 connected listings on Expedia
+// TODO: the owner's own Guesty dashboard shows 0 connected listings on Expedia
 // (vs 8 on Airbnb, 8 on Booking.com) - confirm we're actually live there
 // before shipping this, or it reads as a false "also bookable on" claim.
 const LOGOS = [
@@ -29,7 +29,7 @@ export function TrustedBy() {
             mouse. Without the (hover: hover) gate, tapping/scrolling past
             this row on a touch device can trigger a "stuck" :hover state
             (there's no pointer to move away and clear it), which freezes
-            the marquee for the rest of the visit - the exact bug Zac
+            the marquee for the rest of the visit - the exact bug the owner
             reported on mobile. */}
         <div className="flex w-max animate-[marquee-quarter_26s_linear_infinite] items-center [@media(hover:hover)]:group-hover:[animation-play-state:paused]">
           {[0, 1, 2, 3].map((copy) => (

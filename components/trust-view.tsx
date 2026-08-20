@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ShieldCheck, MessageCircle, Building2, Star, CreditCard, PlayCircle, MapPin } from "lucide-react";
+import { ShieldCheck, MessageCircle, Building2, Star, CreditCard, Lock } from "lucide-react";
 import type { Locale } from "@/lib/i18n/config";
 import { REVIEWS } from "@/lib/reviews";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
@@ -17,35 +17,6 @@ const PLATFORM_LOGO: Record<string, { src: string; width: number; height: number
   Instagram: "instagram",
   Facebook: "facebook",
 };
-
-// Real addresses Zac provided 2026-08-19, for banks/payment processors/
-// anyone verifying legitimacy - not guest-facing check-in instructions.
-const ADDRESSES = [
-  {
-    labelEn: "Head Office",
-    labelEs: "Oficina Central",
-    address: "75 E 3rd St, Sheridan, WY 82801, USA",
-  },
-  {
-    labelEn: "Guatemala City",
-    labelEs: "Ciudad de Guatemala",
-    // Matches the address format on Zac's live Google Business Profile
-    // exactly ("19 Avenida 1220", no hyphen) - NAP (name/address/phone)
-    // consistency across listings is a real local-SEO signal, so this
-    // should stay byte-for-byte identical to the Google listing.
-    address: "19 Avenida 1220, Zona 11, Ciudad de Guatemala",
-  },
-  {
-    labelEn: "Antigua Guatemala",
-    labelEs: "Antigua Guatemala",
-    address: "2a Calle Poniente 38, Antigua Guatemala 03001",
-  },
-  {
-    labelEn: "El Paredon Camping",
-    labelEs: "El Paredon Camping",
-    address: "CA-1, El Paredon 05007",
-  },
-] as const;
 
 // Every fact on this page is real and already used elsewhere on the site -
 // no invented numbers, no fabricated badges. See lib/reviews.ts (real
@@ -74,27 +45,6 @@ export function TrustView({ lang }: { lang: Locale }) {
           : "We know booking outside a big platform can feel uncertain. Here's exactly who we are, how we operate, and how to verify us yourself before you pay a cent."}
       </p>
 
-      {/* TODO(Zac): swap for the real intro video once filmed - you, your
-          face, and the actual properties, so guests see it matches what
-          they're booking. Drop the file in public/videos/ and replace this
-          block with a <video> tag, same pattern as components/hero.tsx. */}
-      <div className="relative mt-8 h-56 w-full overflow-hidden rounded-xl">
-        <Image
-          src="/images/stock/antigua-sunset-cerro-de-la-cruz.jpg"
-          alt="Antigua Guatemala at golden hour"
-          fill
-          className="object-cover"
-        />
-        <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 bg-ink/50 text-center">
-          <PlayCircle className="text-crema" size={32} aria-hidden="true" />
-          <p className="max-w-xs px-4 text-xs font-medium text-crema">
-            {isEs
-              ? "Video pendiente — presentacion del anfitrion y las propiedades"
-              : "Video pending - host intro, face to face with the actual properties"}
-          </p>
-        </div>
-      </div>
-
       <div className="mt-10 space-y-8">
         <div className="flex gap-4">
           <Building2 className="mt-1 shrink-0 text-quetzal" size={22} aria-hidden="true" />
@@ -104,33 +54,9 @@ export function TrustView({ lang }: { lang: Locale }) {
             </h2>
             <p className="mt-2 text-sm text-ink/70">
               {isEs
-                ? "Buen Rollo LLC es una entidad registrada con oficina registrada en Sheridan, Wyoming. Tambien estamos registrados ante la SAT en Guatemala y podemos emitir facturas oficiales para tu estadia. No somos un listado anonimo - somos un negocio con nombre legal, registro fiscal e historial."
-                : "Buen Rollo LLC is a registered entity with a registered office in Sheridan, Wyoming. We're also registered with Guatemala's SAT (the national tax authority) and can provide official invoices for your stay. We're not an anonymous listing - we're a business with a legal name, a tax registration, and a paper trail."}
+                ? "Buen Rollo LLC es una empresa registrada en Estados Unidos que ofrece servicios de hospedaje y alojamiento en Guatemala. Podemos emitir facturas oficiales para tu estadia si las solicitas. No somos un listado anonimo - somos un negocio registrado con nombre legal e historial."
+                : "Buen Rollo LLC is a U.S.-registered company providing hospitality and accommodation services in Guatemala. We can provide official invoices for your stay on request. We're not an anonymous listing - we're a registered business with a legal name and a paper trail."}
             </p>
-          </div>
-        </div>
-
-        <div className="flex gap-4">
-          <MapPin className="mt-1 shrink-0 text-quetzal" size={22} aria-hidden="true" />
-          <div>
-            <h2 className="font-heading text-lg text-ink">
-              {isEs ? "Nuestras direcciones" : "Our addresses"}
-            </h2>
-            <p className="mt-2 text-sm text-ink/70">
-              {isEs
-                ? "Para bancos, procesadores de pago o cualquier persona que necesite verificar donde operamos."
-                : "For banks, payment processors, or anyone who needs to verify where we actually operate."}
-            </p>
-            <dl className="mt-3 space-y-2 text-sm text-ink/70">
-              {ADDRESSES.map((location) => (
-                <div key={location.labelEn}>
-                  <dt className="inline font-medium text-ink">
-                    {(isEs ? location.labelEs : location.labelEn) + ": "}
-                  </dt>
-                  <dd className="inline">{location.address}</dd>
-                </div>
-              ))}
-            </dl>
           </div>
         </div>
 
@@ -164,21 +90,41 @@ export function TrustView({ lang }: { lang: Locale }) {
             </h2>
             <p className="mt-2 text-sm text-ink/70">
               {isEs
-                ? "Puedes pagar con un enlace de pago seguro, transferencia bancaria, o incluso efectivo si es una reserva de ultimo momento. En temporada alta solemos pedir el pago con anticipacion - no es un truco, es simplemente como protegemos tu reserva de cancelaciones de ultima hora y evitamos bloquear el calendario para otros huespedes cuando la demanda es mas alta."
-                : "You can pay via a secure payment link, bank transfer, or even cash if it's a last-minute booking. During high season we usually ask for payment in advance - not a trick, just how we protect your reservation from no-shows and avoid blocking the calendar for other guests when demand is highest."}
+                ? "Las reservas directas se procesan de forma segura a traves de Wise. Ingresas tus datos de pago directamente en la interfaz de pago de Wise - Buen Rollo Escapes no ve ni almacena la informacion de tu tarjeta."
+                : "Direct bookings are processed securely through Wise. You enter your payment details directly into the Wise payment interface - Buen Rollo Escapes does not see or store your card information."}
             </p>
-            <p className="mt-2 text-xs text-ink/50">
+            <p className="mt-2 text-sm text-ink/70">
               {isEs
-                ? "Esto no es poco comun: Booking.com mismo permite explicitamente a los anfitriones cobrar directamente en lugar de procesar el pago a traves de la plataforma - es una opcion estandar del sector, no algo improvisado."
-                : "This isn't unusual: Booking.com itself explicitly lets hosts collect payment directly instead of processing it through the platform - it's a standard industry option, not something improvised."}{" "}
-              <a
-                href="https://partner.booking.com/en-us/help/policies-payments/payment-products/payments-bookingcom-faqs"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline"
-              >
-                (Booking.com {isEs ? "para socios" : "for Partners"})
-              </a>
+                ? "Tambien puedes pagar por transferencia bancaria o en efectivo para reservas de ultimo momento. En temporada alta es posible que pidamos el pago con anticipacion para asegurar tu reserva."
+                : "You can also pay via bank transfer or cash for last-minute bookings. During high season we may ask for payment in advance to secure your reservation."}
+            </p>
+            <div className="mt-3 flex items-center gap-2 text-xs text-ink/50">
+              <Image src="/images/trust/wise-logo.svg" alt="Wise" width={57} height={14} />
+              <span>{isEs ? "Pagos procesados por Wise" : "Payments processed by Wise"}</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex gap-4">
+          <Lock className="mt-1 shrink-0 text-quetzal" size={22} aria-hidden="true" />
+          <div>
+            <h2 className="font-heading text-lg text-ink">
+              {isEs ? "Seguridad de la reserva" : "Booking Security"}
+            </h2>
+            <p className="mt-2 text-sm text-ink/70">
+              {isEs
+                ? "Buen Rollo Escapes nunca te va a pedir el numero completo de tu tarjeta, el CVV, contrasenas o codigos de verificacion por WhatsApp o correo electronico."
+                : "Buen Rollo Escapes will never ask you to send your full card number, CVV, passwords or verification codes by WhatsApp or email."}
+            </p>
+            <p className="mt-2 text-sm text-ink/70">
+              {isEs
+                ? "Para reservas directas, te damos un enlace de pago seguro donde ingresas tu propia informacion de pago directamente a traves de nuestro proveedor de pagos. Buen Rollo Escapes no ve ni almacena los datos de tu tarjeta."
+                : "For direct bookings, we provide a secure payment link where you enter your own payment information directly through our payment provider. Buen Rollo Escapes does not see or store your card details."}
+            </p>
+            <p className="mt-2 text-sm text-ink/70">
+              {isEs
+                ? "Si recibes una solicitud de pago de un numero o cuenta que no reconoces, contactanos a traves de los datos oficiales de este sitio antes de realizar cualquier pago."
+                : "If you receive a payment request from a number or account you don't recognize, contact us through the official details on this website before making a payment."}
             </p>
           </div>
         </div>

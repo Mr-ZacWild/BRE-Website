@@ -22,9 +22,7 @@ export function ContactView({ lang, dict }: { lang: Locale; dict: Dictionary }) 
         >
           <WhatsAppIcon className="h-6 w-6" />
           <div>
-            <p className="text-sm font-medium text-ink">
-              <span aria-hidden="true">🇦🇺 </span>WhatsApp (English)
-            </p>
+            <p className="text-sm font-medium text-ink">WhatsApp (English)</p>
             <p className="text-xs text-ink/60">+502 3922 9168</p>
           </div>
         </a>
@@ -36,9 +34,7 @@ export function ContactView({ lang, dict }: { lang: Locale; dict: Dictionary }) 
         >
           <WhatsAppIcon className="h-6 w-6" />
           <div>
-            <p className="text-sm font-medium text-ink">
-              <span aria-hidden="true">🇬🇹 </span>WhatsApp (Spanish / Español)
-            </p>
+            <p className="text-sm font-medium text-ink">WhatsApp (Spanish / Español)</p>
             <p className="text-xs text-ink/60">+502 5998 9468</p>
           </div>
         </a>

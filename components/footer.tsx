@@ -20,7 +20,6 @@ export function Footer({ lang, dict }: { lang: Locale; dict: Dictionary }) {
               {dict.footer.tagline}
             </p>
             <p className="mt-3 text-xs">{dict.footer.locations}</p>
-            <p className="mt-1 text-xs text-crema/40">Registered office: Sheridan, Wyoming</p>
             <div className="mt-4 flex items-center gap-3">
               <a
                 href={instagramUrl}

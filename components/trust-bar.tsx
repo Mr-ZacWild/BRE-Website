@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Users, ShieldCheck, Lock } from "lucide-react";
 
-// Confirmed by Zac on 2026-07-09.
+// Confirmed by the owner on 2026-07-09.
 const STATS = [
   { icon: Users, label: "1,000+ guests hosted" },
   { icon: null, label: "4.91 on Airbnb" },

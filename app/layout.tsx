@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Fraunces } from "next/font/google";
 import "./globals.css";
 import { SITE_URL } from "@/lib/site";
-import { GoogleAnalytics } from "@/components/google-analytics";
 
 const fraunces = Fraunces({
   variable: "--font-fraunces",
@@ -31,6 +30,12 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Buen Rollo Escapes",
     description,
+  },
+  // TODO: Replace with the actual Google Search Console verification
+  // code. Needed to submit the sitemap, request URL removals (for the
+  // old Guesty site), and monitor search performance.
+  verification: {
+    google: "VERIFICATION_CODE_HERE",
   },
 };
 
@@ -76,7 +81,6 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col bg-crema text-ink">
-        <GoogleAnalytics />
         {children}
       </body>
     </html>

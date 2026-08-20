@@ -5,7 +5,7 @@ export interface Review {
   property: string;
 }
 
-// Real Airbnb review excerpts, supplied by Zac on 2026-07-09.
+// Real Airbnb review excerpts, supplied by the owner on 2026-07-09.
 export const REVIEWS: Review[] = [
   {
     quote:

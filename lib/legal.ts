@@ -24,7 +24,7 @@ export const TERMS_SECTIONS: LegalSection[] = [
   {
     heading: "Who you're booking with",
     body: [
-      "These terms are between you and Buen Rollo LLC, a Wyoming-registered company that also holds a Guatemalan SAT tax registration and can issue official invoices for direct bookings. By booking a stay with us - through this website, WhatsApp, or a third-party platform - you agree to these terms.",
+      "These terms are between you and Buen Rollo LLC, a U.S.-registered company providing accommodation services in Guatemala. We can issue official invoices for direct bookings on request. By booking a stay with us - through this website, WhatsApp, or a third-party platform - you agree to these terms.",
     ],
   },
   {
@@ -66,6 +66,7 @@ export const TERMS_SECTIONS: LegalSection[] = [
     heading: "Liability",
     body: [
       "Buen Rollo LLC is not responsible for theft, personal injury, or service interruptions (power, water, internet, etc.) that are outside of our reasonable control.",
+      "Our total liability in connection with any booking shall not exceed the total amount paid by the guest for that booking.",
     ],
   },
   {
@@ -87,6 +88,12 @@ export const TERMS_SECTIONS: LegalSection[] = [
     ],
   },
   {
+    heading: "Dispute resolution",
+    body: [
+      "Any dispute arising from these terms should first be resolved through good-faith negotiation between the guest and Buen Rollo LLC. If unresolved, disputes shall be submitted to the courts of Guatemala City, Guatemala.",
+    ],
+  },
+  {
     heading: "Changes to these terms",
     body: [
       "We may update these terms from time to time. The version in effect at the time you complete a booking is the one that applies to that stay.",
@@ -98,13 +105,20 @@ export const TERMS_SECTIONS: LegalSection[] = [
       "Questions about these terms: WhatsApp us in English (+502 3922 9168) or Spanish (+502 5998 9468).",
     ],
   },
+  {
+    heading: "Company Information",
+    body: [
+      "Buen Rollo Escapes is operated by Buen Rollo LLC, a company registered in Wyoming, United States, providing hospitality and accommodation services in Guatemala.",
+      "For legal or business correspondence, contact us through the details on our Contact page.",
+    ],
+  },
 ];
 
 export const TERMS_SECTIONS_ES: LegalSection[] = [
   {
     heading: "Con quién estás reservando",
     body: [
-      "Estos términos son un acuerdo entre tú y Buen Rollo LLC, una empresa registrada en Wyoming que también cuenta con registro fiscal ante la SAT en Guatemala y puede emitir facturas oficiales para reservas directas. Al reservar una estadía con nosotros - a través de este sitio, WhatsApp, o una plataforma externa - aceptas estos términos.",
+      "Estos términos son un acuerdo entre tú y Buen Rollo LLC, una empresa registrada en Estados Unidos que ofrece servicios de alojamiento en Guatemala. Podemos emitir facturas oficiales para reservas directas si las solicitas. Al reservar una estadía con nosotros - a través de este sitio, WhatsApp, o una plataforma externa - aceptas estos términos.",
     ],
   },
   {
@@ -146,6 +160,7 @@ export const TERMS_SECTIONS_ES: LegalSection[] = [
     heading: "Responsabilidad",
     body: [
       "Buen Rollo LLC no se hace responsable por robos, lesiones personales, o interrupciones de servicio (electricidad, agua, internet, etc.) que estén fuera de nuestro control razonable.",
+      "Nuestra responsabilidad total en relación con cualquier reserva no excederá el monto total pagado por el huésped por esa reserva.",
     ],
   },
   {
@@ -167,6 +182,12 @@ export const TERMS_SECTIONS_ES: LegalSection[] = [
     ],
   },
   {
+    heading: "Resolución de disputas",
+    body: [
+      "Cualquier disputa derivada de estos términos debe resolverse primero mediante negociación de buena fe entre el huésped y Buen Rollo LLC. Si no se resuelve, la disputa se someterá a los tribunales de la Ciudad de Guatemala, Guatemala.",
+    ],
+  },
+  {
     heading: "Cambios a estos términos",
     body: [
       "Podemos actualizar estos términos de vez en cuando. La versión vigente al momento en que completas una reserva es la que aplica a esa estadía.",
@@ -176,6 +197,13 @@ export const TERMS_SECTIONS_ES: LegalSection[] = [
     heading: "Contacto",
     body: [
       "Preguntas sobre estos términos: escríbenos por WhatsApp en inglés (+502 3922 9168) o español (+502 5998 9468).",
+    ],
+  },
+  {
+    heading: "Información de la empresa",
+    body: [
+      "Buen Rollo Escapes es operado por Buen Rollo LLC, una empresa registrada en Wyoming, Estados Unidos, que ofrece servicios de hospedaje y alojamiento en Guatemala.",
+      "Para correspondencia legal o comercial, contáctanos a través de los datos en nuestra página de Contacto.",
     ],
   },
 ];
@@ -197,7 +225,8 @@ export const PRIVACY_SECTIONS: LegalSection[] = [
   {
     heading: "Cookies and analytics",
     body: [
-      "This website uses analytics tools (such as Google Analytics) to understand how visitors use the site, so we can improve it. These tools may use cookies and collect standard technical information like your browser type and general location - they don't identify you personally.",
+      "This website uses analytics tools (such as Google Analytics) to understand how visitors use the site so we can improve it. These tools may use cookies and collect standard technical information like your browser type and general location - they do not identify you personally.",
+      "When you first visit our site, you can choose to accept or decline analytics cookies. If you decline, no analytics data is collected. You can change your preference by clearing your browser's stored data for this site.",
     ],
   },
   {
@@ -207,9 +236,15 @@ export const PRIVACY_SECTIONS: LegalSection[] = [
     ],
   },
   {
+    heading: "International data transfers",
+    body: [
+      "Your information may be processed in the United States and Guatemala. By booking with us, you acknowledge that your information may be transferred to and stored in these countries.",
+    ],
+  },
+  {
     heading: "How long we keep it",
     body: [
-      "We retain booking and guest information for as long as reasonably necessary to fulfil the purposes above, including any legal or tax record-keeping requirements (such as invoices issued under our Guatemalan SAT registration).",
+      "We retain booking and guest information for as long as reasonably necessary to fulfil the purposes above, including any applicable legal, accounting, tax or regulatory requirements.",
     ],
   },
   {
@@ -222,12 +257,13 @@ export const PRIVACY_SECTIONS: LegalSection[] = [
     heading: "Security",
     body: [
       "We take reasonable measures to protect your personal information from unauthorized access, misuse, or disclosure. This website is served over an encrypted (HTTPS) connection, and we never ask you to send full card details over WhatsApp or email.",
+      "If we become aware of a data breach affecting your personal information, we will notify affected guests without unreasonable delay.",
     ],
   },
   {
     heading: "Contact",
     body: [
-      "Questions about this policy: WhatsApp us in English (+502 3922 9168) or Spanish (+502 5998 9468).",
+      "Questions about this policy? Contact us through the details on our Contact page.",
     ],
   },
 ];
@@ -250,6 +286,7 @@ export const PRIVACY_SECTIONS_ES: LegalSection[] = [
     heading: "Cookies y analítica",
     body: [
       "Este sitio usa herramientas de analítica (como Google Analytics) para entender cómo los visitantes usan el sitio, y así poder mejorarlo. Estas herramientas pueden usar cookies y recopilar información técnica estándar como el tipo de navegador y la ubicación general - no te identifican personalmente.",
+      "Cuando visitas nuestro sitio por primera vez, puedes elegir aceptar o rechazar las cookies de analítica. Si las rechazas, no se recopila ningún dato de analítica. Puedes cambiar tu preferencia borrando los datos almacenados de este sitio en tu navegador.",
     ],
   },
   {
@@ -259,9 +296,15 @@ export const PRIVACY_SECTIONS_ES: LegalSection[] = [
     ],
   },
   {
+    heading: "Transferencias internacionales de datos",
+    body: [
+      "Tu información puede procesarse en Estados Unidos y Guatemala. Al reservar con nosotros, reconoces que tu información puede ser transferida y almacenada en estos países.",
+    ],
+  },
+  {
     heading: "Cuánto tiempo la guardamos",
     body: [
-      "Conservamos la información de reservas y huéspedes durante el tiempo razonablemente necesario para cumplir con los fines anteriores, incluyendo cualquier requisito legal o fiscal de conservación de registros (como facturas emitidas bajo nuestro registro ante la SAT en Guatemala).",
+      "Conservamos la información de reservas y huéspedes durante el tiempo razonablemente necesario para cumplir con los fines anteriores, incluyendo cualquier requisito legal, contable, fiscal o regulatorio aplicable.",
     ],
   },
   {
@@ -274,12 +317,13 @@ export const PRIVACY_SECTIONS_ES: LegalSection[] = [
     heading: "Seguridad",
     body: [
       "Tomamos medidas razonables para proteger tu información personal de acceso no autorizado, mal uso, o divulgación. Este sitio se sirve a través de una conexión cifrada (HTTPS), y nunca te pedimos que envíes los datos completos de tu tarjeta por WhatsApp o correo electrónico.",
+      "Si tenemos conocimiento de una filtración de datos que afecte tu información personal, notificaremos a los huéspedes afectados sin demora injustificada.",
     ],
   },
   {
     heading: "Contacto",
     body: [
-      "Preguntas sobre esta política: escríbenos por WhatsApp en inglés (+502 3922 9168) o español (+502 5998 9468).",
+      "¿Preguntas sobre esta política? Contáctanos a través de los datos en nuestra página de Contacto.",
     ],
   },
 ];

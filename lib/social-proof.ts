@@ -15,7 +15,7 @@ export interface VerifiedListing {
 export const VERIFIED_LISTINGS: VerifiedListing[] = [
   {
     platform: "Airbnb",
-    label: "Zac's Airbnb host profile",
+    label: "Our Airbnb host profile",
     url: "https://www.airbnb.com/users/profile/1462809475039707952",
     stat: "Superhost - 4.91 (219 reviews)",
   },

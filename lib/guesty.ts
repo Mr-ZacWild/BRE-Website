@@ -37,7 +37,7 @@ export function getGuestyBookingUrl(
 /**
  * Phase 2 (not implemented): on-site availability/quotes via the Guesty
  * Open API. Left as a stub so Phase 1 has a clean seam to grow into -
- * do not implement until Zac asks for it. Credentials should live in
+ * do not implement until the owner asks for it. Credentials should live in
  * GUESTY_CLIENT_ID / GUESTY_CLIENT_SECRET env vars, never in source.
  */
 export async function getAvailability(

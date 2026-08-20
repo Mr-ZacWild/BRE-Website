@@ -15,14 +15,14 @@ export interface Property {
   amenities: string[];
   /**
    * Real Guesty listing _id, pulled from the Open API on 2026-07-09 and
-   * confirmed by Zac. `undefined` means this unit isn't in Guesty yet -
+   * confirmed by the owner. `undefined` means this unit isn't in Guesty yet -
    * the booking CTA falls back to WhatsApp-only in that case (see
    * lib/guesty.ts).
    */
   guestyListingId?: string;
   /** Paths under /public/images/properties - real photos, roughly matched. */
   photos?: string[];
-  /** Google Maps embed src for this property's building, from Zac 2026-07-10. */
+  /** Google Maps embed src for this property's building, from the owner 2026-07-10. */
   mapEmbedSrc?: string;
   /**
    * Real Airbnb rating for AggregateRating schema (star ratings in Google
@@ -66,7 +66,7 @@ export const LOCATIONS: Record<
   },
 };
 
-// Google Maps embed src values, sent by Zac 2026-07-10 - one per building.
+// Google Maps embed src values, sent by the owner 2026-07-10 - one per building.
 const PARQUE_SAN_JORGE_MAP =
   "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3885.877373224798!2d-90.5554227!3d14.6137489!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8589a1219a251cbb%3A0x176cb9eaa35dc818!2sBuen%20Rollo%20Escapes%20%E2%80%93%20Parque%20San%20Jorge%20(Zona%2011)!5e1!3m2!1sen!2sgt!4v1783650713694!5m2!1sen!2sgt";
 const ANTIGUA_MAP =
@@ -75,7 +75,7 @@ const PARQUE_14_MAP =
   "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.326922456983!2d-90.5193786!3d14.588305300000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8589a303e36a9753%3A0xf794d042a8527c3d!2sBuen%20Rollo%20Escapes%20Parque%2014!5e1!3m2!1sen!2sgt!4v1783650847521!5m2!1sen!2sgt";
 
 // All capacity numbers, ratings and descriptions below were scraped
-// directly from the live Airbnb listings on 2026-08-16 (Zac sent the
+// directly from the live Airbnb listings on 2026-08-16 (the owner sent the
 // real airbnb.com/l/ links) - not estimates. Re-check against the live
 // listing if these ever look stale.
 export const PROPERTIES: Property[] = [
@@ -112,7 +112,7 @@ export const PROPERTIES: Property[] = [
     beds: 3,
     bathrooms: 2,
     description:
-      "A high-floor 2-bedroom apartment on level 18 of Parque San Jorge, one of Zona 11's newest residential towers (built 2024). Panoramic city and volcano views from the living room, balcony and both bedrooms. Master bedroom has a king bed, Smart TV and en-suite bathroom; the second bedroom has a double bed. Fully equipped kitchen, in-unit washer & dryer, and 200+ Mbps wifi with a dedicated desk. Supermarket (Mercado Roosevelt) a 10-minute walk away. Pool access and self check-in included.",
+      "A 2-bedroom apartment on an upper floor of Parque San Jorge, one of Zona 11's newest residential towers (built 2024). Panoramic city and volcano views from the living room, balcony and both bedrooms. Master bedroom has a king bed, Smart TV and en-suite bathroom; the second bedroom has a double bed. Fully equipped kitchen, in-unit washer & dryer, and 200+ Mbps wifi with a dedicated desk. Supermarket (Mercado Roosevelt) a 10-minute walk away. Pool access and self check-in included.",
     highlights: ["High floor", "City & volcano view", "Pool access", "King master bedroom"],
     amenities: ["Pool", "Co-working lounge", "24/7 security", "Elevator", "Wifi", "Washer & dryer", "Smart TV"],
     guestyListingId: "6881799f01272a0010ea99a8", // PSJ | #1819
@@ -135,7 +135,7 @@ export const PROPERTIES: Property[] = [
     beds: 4,
     bathrooms: 2,
     description:
-      "A modern 3-bedroom apartment on level 18 of Parque San Jorge with panoramic views of Volcán de Agua, Volcán de Fuego and the Guatemala City skyline from the living room, balcony and bedrooms. Master bedroom has a king bed, Smart TV and en-suite bathroom with the best views in the apartment; two further bedrooms with a double bed each, plus a fold-out sofa in the living room. Fully equipped kitchen, in-unit laundry, and 200+ Mbps wifi with a dedicated desk for remote work. Full private apartment - not shared space - with pool, gym, co-working lounge, games room and secure parking included.",
+      "A modern 3-bedroom apartment on an upper floor of Parque San Jorge with panoramic views of Volcán de Agua, Volcán de Fuego and the Guatemala City skyline from the living room, balcony and bedrooms. Master bedroom has a king bed, Smart TV and en-suite bathroom with the best views in the apartment; two further bedrooms with a double bed each, plus a fold-out sofa in the living room. Fully equipped kitchen, in-unit laundry, and 200+ Mbps wifi with a dedicated desk for remote work. Full private apartment - not shared space - with pool, gym, co-working lounge, games room and secure parking included.",
     highlights: ["Volcán de Agua & Fuego view", "Skyline view", "Pool access", "Gym access"],
     amenities: ["Pool", "Gym", "Co-working lounge", "Games room", "Secure parking", "24/7 security", "Elevator", "Wifi"],
     guestyListingId: "68817b105d163d0021cd3ef3", // PSJ | #1820
@@ -158,7 +158,7 @@ export const PROPERTIES: Property[] = [
     beds: 4,
     bathrooms: 2,
     description:
-      "A high-floor 3-bedroom apartment on level 19 of Parque San Jorge with panoramic views of Volcán de Agua, Volcán de Fuego and the city skyline. Master bedroom has a king bed and en-suite bathroom; two further bedrooms with a double bed each, plus a fold-out sofa in the living room for extra guests. Fully equipped kitchen, in-unit washer & dryer, and 200+ Mbps wifi with a dedicated desk. Pool, gym and secure parking included.",
+      "A 3-bedroom apartment on an upper floor of Parque San Jorge with panoramic views of Volcán de Agua, Volcán de Fuego and the city skyline. Master bedroom has a king bed and en-suite bathroom; two further bedrooms with a double bed each, plus a fold-out sofa in the living room for extra guests. Fully equipped kitchen, in-unit washer & dryer, and 200+ Mbps wifi with a dedicated desk. Pool, gym and secure parking included.",
     highlights: ["High floor", "Volcano & city view", "Pool access", "King master bedroom"],
     amenities: ["Pool", "Gym", "Co-working lounge", "Secure parking", "24/7 security", "Elevator", "Wifi", "Smart TV"],
     guestyListingId: "688179fe71e6080017d1bb6a", // PSJ | #1919
@@ -181,7 +181,7 @@ export const PROPERTIES: Property[] = [
     beds: 4,
     bathrooms: 2,
     description:
-      "A high-floor 3-bedroom apartment on level 19 of Parque San Jorge with sweeping views of the Guatemala City skyline from the living room, balcony and bedrooms. Master bedroom has a king bed, Smart TV and en-suite bathroom; two further bedrooms with a double bed each, plus a fold-out sofa in the living room. Fully equipped kitchen, in-unit laundry, and 200+ Mbps wifi with a dedicated desk. Pool access and self check-in included - guests rate this location a perfect 5 stars.",
+      "A 3-bedroom apartment on an upper floor of Parque San Jorge with sweeping views of the Guatemala City skyline from the living room, balcony and bedrooms. Master bedroom has a king bed, Smart TV and en-suite bathroom; two further bedrooms with a double bed each, plus a fold-out sofa in the living room. Fully equipped kitchen, in-unit laundry, and 200+ Mbps wifi with a dedicated desk. Pool access and self check-in included - guests rate this location a perfect 5 stars.",
     highlights: ["High floor", "City skyline view", "Pool access", "Perfect location rating"],
     amenities: ["Pool", "Co-working lounge", "24/7 security", "Elevator", "Wifi", "Washer & dryer", "Smart TV"],
     guestyListingId: "68817975f821b0002245a032", // PSJ | #1918
@@ -195,7 +195,7 @@ export const PROPERTIES: Property[] = [
     rating: { value: 4.84, count: 25 },
   },
   {
-    // Confirmed by Zac 2026-07-10: this unit is Zona 14, not Zona 11.
+    // Confirmed by the owner 2026-07-10: this unit is Zona 14, not Zona 11.
     slug: "zona-14-a1503-three-bedroom",
     name: "Level 15 Airport & Volcano View",
     location: "guatemala-city",

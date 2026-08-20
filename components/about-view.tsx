@@ -3,8 +3,7 @@ import Image from "next/image";
 // Real, relevant Guatemala imagery standing in until real team/property
 // photos are supplied - deliberately NOT stock photos of strangers'
 // faces pretending to be the team, since that's a different, worse kind
-// of misleading than scenery. Swap for real photos of Zac/the team when
-// available.
+// of misleading than scenery. Swap for real team photos when available.
 const TEAM_PHOTO = "/images/stock/antigua-sunset-cerro-de-la-cruz.jpg";
 const GRID_PHOTOS = [
   "/images/stock/lake-atitlan-dock-volcano.jpg",
@@ -27,10 +26,19 @@ export function AboutView() {
       <p className="mt-5 text-ink/75">
         Guests who got tired of listings that all looked the same. Of check-in
         instructions buried three apps deep. Of paying a platform fee for the
-        privilege of feeling like a booking number instead of a person. We
-        loved Guatemala enough to keep coming back &ndash; and eventually, to
-        stay. Buen Rollo exists because we&rsquo;re still those travelers. We
-        just happen to hold the keys now.
+        privilege of feeling like a booking number instead of a person.
+      </p>
+      <p className="mt-3 text-ink/75">
+        Buen Rollo Escapes is a small, independently owned hospitality
+        business creating comfortable, thoughtfully designed stays in
+        Guatemala. We&rsquo;re not a hotel chain &ndash; every property is
+        personally selected, furnished and cared for with the goal of making
+        every stay comfortable, straightforward and genuinely enjoyable.
+      </p>
+      <p className="mt-3 text-ink/75">
+        We&rsquo;re a small team, which means we can pay attention to the
+        details that larger operators sometimes miss &ndash; from carefully
+        prepared spaces to responsive guest support.
       </p>
 
       <div className="relative mt-8 h-64 w-full overflow-hidden rounded-xl">
@@ -84,18 +92,16 @@ export function AboutView() {
 
       <h2 className="mt-12 font-heading text-xl text-ink">Where we&rsquo;re headed</h2>
       <p className="mt-3 text-ink/75">
-        We started with a handful of apartments in Guatemala City, because
-        that&rsquo;s where we were. Antigua came next, because we
-        couldn&rsquo;t stop going back. El Paredon came after that, because
-        someone convinced us to try surfing and we never really left. Every
-        place we add is somewhere we&rsquo;d actually want to stay ourselves
-        &ndash; that&rsquo;s the only filter that matters to us.
+        We started with a handful of apartments in Guatemala City. Antigua
+        came next. El Paredon came after that. Every place we add is
+        somewhere we&rsquo;d actually want to stay &ndash; that&rsquo;s the
+        only filter that matters.
       </p>
       <p className="mt-3 text-ink/75">
         We&rsquo;re not trying to build the biggest collection of stays in
         Guatemala. We&rsquo;re trying to build the one we&rsquo;d recommend to
         a friend without hesitating &ndash; and then keep adding to it, one
-        good place at a time, for as long as that stays true.
+        good place at a time.
       </p>
     </div>
   );

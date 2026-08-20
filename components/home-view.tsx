@@ -15,7 +15,7 @@ import { PropertyPhoto } from "./property-photo";
 
 export function HomeView({ lang, dict }: { lang: Locale; dict: Dictionary }) {
   const prefix = lang === "en" ? "" : "/es";
-  // One from each place, not three Zona 11 units in a row - Zac wants the
+  // One from each place, not three Zona 11 units in a row - the owner wants the
   // Antigua Casa and the Zona 14 (Parque 14) unit represented here too.
   const featured = [
     "zona-11-luxury-king-pool-gym",
