@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ShieldCheck, MessageCircle, Building2, Star, CreditCard, PlayCircle } from "lucide-react";
+import { ShieldCheck, MessageCircle, Building2, Star, CreditCard, PlayCircle, MapPin } from "lucide-react";
 import type { Locale } from "@/lib/i18n/config";
 import { REVIEWS } from "@/lib/reviews";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
@@ -17,6 +17,31 @@ const PLATFORM_LOGO: Record<string, { src: string; width: number; height: number
   Instagram: "instagram",
   Facebook: "facebook",
 };
+
+// Real addresses Zac provided 2026-08-19, for banks/payment processors/
+// anyone verifying legitimacy - not guest-facing check-in instructions.
+const ADDRESSES = [
+  {
+    labelEn: "Head Office",
+    labelEs: "Oficina Central",
+    address: "75 E 3rd St, Sheridan, WY 82801, USA",
+  },
+  {
+    labelEn: "Guatemala City",
+    labelEs: "Ciudad de Guatemala",
+    address: "19 Avenida 12-20 Zona 11, Ciudad de Guatemala",
+  },
+  {
+    labelEn: "Antigua Guatemala",
+    labelEs: "Antigua Guatemala",
+    address: "2a Calle Poniente 38, Antigua Guatemala 03001",
+  },
+  {
+    labelEn: "El Paredon Camping",
+    labelEs: "El Paredon Camping",
+    address: "CA-1, El Paredon 05007",
+  },
+] as const;
 
 // Every fact on this page is real and already used elsewhere on the site -
 // no invented numbers, no fabricated badges. See lib/reviews.ts (real
@@ -78,6 +103,30 @@ export function TrustView({ lang }: { lang: Locale }) {
                 ? "Buen Rollo LLC es una entidad registrada con oficina registrada en Sheridan, Wyoming. Tambien estamos registrados ante la SAT en Guatemala y podemos emitir facturas oficiales para tu estadia. No somos un listado anonimo - somos un negocio con nombre legal, registro fiscal e historial."
                 : "Buen Rollo LLC is a registered entity with a registered office in Sheridan, Wyoming. We're also registered with Guatemala's SAT (the national tax authority) and can provide official invoices for your stay. We're not an anonymous listing - we're a business with a legal name, a tax registration, and a paper trail."}
             </p>
+          </div>
+        </div>
+
+        <div className="flex gap-4">
+          <MapPin className="mt-1 shrink-0 text-quetzal" size={22} aria-hidden="true" />
+          <div>
+            <h2 className="font-heading text-lg text-ink">
+              {isEs ? "Nuestras direcciones" : "Our addresses"}
+            </h2>
+            <p className="mt-2 text-sm text-ink/70">
+              {isEs
+                ? "Para bancos, procesadores de pago o cualquier persona que necesite verificar donde operamos."
+                : "For banks, payment processors, or anyone who needs to verify where we actually operate."}
+            </p>
+            <dl className="mt-3 space-y-2 text-sm text-ink/70">
+              {ADDRESSES.map((location) => (
+                <div key={location.labelEn}>
+                  <dt className="inline font-medium text-ink">
+                    {(isEs ? location.labelEs : location.labelEn) + ": "}
+                  </dt>
+                  <dd className="inline">{location.address}</dd>
+                </div>
+              ))}
+            </dl>
           </div>
         </div>
 
