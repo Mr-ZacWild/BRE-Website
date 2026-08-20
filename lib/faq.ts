@@ -19,7 +19,7 @@ export const FAQ_ITEMS: FaqItem[] = [
   {
     question: "How do I pay, and is it safe?",
     answer:
-      "Payment is processed through our secure booking system when you book direct - we never see or store your full card details.",
+      "You can pay via a secure payment link, bank transfer, or cash for last-minute bookings - see our Trust & Safety page for details. We never ask for your card details over WhatsApp or chat.",
   },
   {
     question: "What is your cancellation policy?",
