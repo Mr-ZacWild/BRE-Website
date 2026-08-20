@@ -29,7 +29,11 @@ const ADDRESSES = [
   {
     labelEn: "Guatemala City",
     labelEs: "Ciudad de Guatemala",
-    address: "19 Avenida 12-20 Zona 11, Ciudad de Guatemala",
+    // Matches the address format on Zac's live Google Business Profile
+    // exactly ("19 Avenida 1220", no hyphen) - NAP (name/address/phone)
+    // consistency across listings is a real local-SEO signal, so this
+    // should stay byte-for-byte identical to the Google listing.
+    address: "19 Avenida 1220, Zona 11, Ciudad de Guatemala",
   },
   {
     labelEn: "Antigua Guatemala",

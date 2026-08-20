@@ -15,8 +15,10 @@ import type { LegalSection } from "@/components/legal-view";
 // and the governing-law clause, before leaning on it if a dispute ever
 // happens.
 //
-// TODO: translate to natural Guatemalan Spanish before using on /es -
-// these are legally meaningful pages, not ones to auto-translate.
+// Spanish versions below (2026-08-20) are a real translation, not
+// machine output - written to match the same "tú" voice already used
+// across the rest of the /es site. Same lawyer-review caveat applies
+// to these as to the English originals above.
 
 export const TERMS_SECTIONS: LegalSection[] = [
   {
@@ -98,6 +100,86 @@ export const TERMS_SECTIONS: LegalSection[] = [
   },
 ];
 
+export const TERMS_SECTIONS_ES: LegalSection[] = [
+  {
+    heading: "Con quién estás reservando",
+    body: [
+      "Estos términos son un acuerdo entre tú y Buen Rollo LLC, una empresa registrada en Wyoming que también cuenta con registro fiscal ante la SAT en Guatemala y puede emitir facturas oficiales para reservas directas. Al reservar una estadía con nosotros - a través de este sitio, WhatsApp, o una plataforma externa - aceptas estos términos.",
+    ],
+  },
+  {
+    heading: "Reservas",
+    body: [
+      "Una reserva solo queda garantizada una vez confirmado el pago. Las reservas hechas directo con nosotros se pueden pagar con un enlace de pago seguro, transferencia bancaria, o efectivo en caso de reservas de último momento - te confirmamos los detalles directamente por WhatsApp.",
+      "El huésped principal que hace la reserva debe tener al menos 18 años y será responsable por la conducta de todas las personas en su grupo.",
+      "En temporada alta, es posible que pidamos el pago con anticipación para confirmar la reserva y bloquear el calendario a tu nombre.",
+    ],
+  },
+  {
+    heading: "Check-in y check-out",
+    body: [
+      "El check-in estándar es a las 3:00pm y el check-out a las 11:00am. Se puede coordinar check-in o check-out anticipado o tardío bajo solicitud, sujeto a disponibilidad. Es posible que se requiera identificación con fotografía vigente al momento del check-in, particularmente donde aplique el registro de seguridad del edificio.",
+    ],
+  },
+  {
+    heading: "Cancelaciones y reembolsos",
+    body: [
+      "Si reservaste a través de una plataforma externa (Airbnb, Booking.com, etc.), aplica la política de cancelación de esa plataforma.",
+      "Si reservaste directo con nosotros, recibes un reembolso completo por cancelaciones hechas al menos 48 horas antes del check-in programado. Las cancelaciones dentro de las 48 horas previas al check-in, y las no presentaciones (no-shows), no son reembolsables.",
+      "Los reembolsos aprobados se devuelven al método de pago original. El tiempo de procesamiento varía según el proveedor de pago.",
+      "Las comisiones bancarias y de procesamiento de pago nunca son reembolsables. Cualquier comisión que cobre un banco o procesador de tarjetas sobre un reembolso se traslada al huésped, sin importar el método de reserva. Consulta nuestra Política de Cancelación completa para más detalles.",
+    ],
+  },
+  {
+    heading: "Ocupación y responsabilidades del huésped",
+    body: [
+      "El número de huéspedes hospedados nunca debe exceder la ocupación máxima indicada para la propiedad al momento de la reserva. Se espera que los huéspedes respeten la propiedad y las reglas de la casa: no se permiten fiestas ni eventos, no fumar en interiores, y mantener niveles de ruido razonables para un edificio residencial. Las leyes locales y los reglamentos del edificio aplican durante toda tu estadía.",
+    ],
+  },
+  {
+    heading: "Daños",
+    body: [
+      "Los huéspedes son responsables de cualquier daño causado a la propiedad durante su estadía, más allá del desgaste normal. Se pueden aplicar cargos adicionales para cubrir costos de reparación o reemplazo, y se comunicarán directamente al huésped.",
+    ],
+  },
+  {
+    heading: "Responsabilidad",
+    body: [
+      "Buen Rollo LLC no se hace responsable por robos, lesiones personales, o interrupciones de servicio (electricidad, agua, internet, etc.) que estén fuera de nuestro control razonable.",
+    ],
+  },
+  {
+    heading: "Fuerza mayor",
+    body: [
+      "Ninguna de las partes es responsable por el incumplimiento causado por eventos fuera de su control razonable - desastres naturales, acción gubernamental, disturbios civiles, o circunstancias similares. Cuando una estadía se vea afectada por un evento de este tipo, trabajaremos de buena fe contigo para reprogramar o acordar un reembolso parcial cuando sea razonable.",
+    ],
+  },
+  {
+    heading: "Derecho a rechazar el servicio",
+    body: [
+      "Nos reservamos el derecho de cancelar una reserva, o terminar una estadía anticipadamente, cuando se violen estos términos o las reglas de la casa.",
+    ],
+  },
+  {
+    heading: "Ley aplicable",
+    body: [
+      "Estos términos se rigen por las leyes de Guatemala, donde se ubican las propiedades, sin perjuicio de cualquier protección al consumidor de carácter obligatorio que aplique en tu país de residencia.",
+    ],
+  },
+  {
+    heading: "Cambios a estos términos",
+    body: [
+      "Podemos actualizar estos términos de vez en cuando. La versión vigente al momento en que completas una reserva es la que aplica a esa estadía.",
+    ],
+  },
+  {
+    heading: "Contacto",
+    body: [
+      "Preguntas sobre estos términos: escríbenos por WhatsApp en inglés (+502 3922 9168) o español (+502 5998 9468).",
+    ],
+  },
+];
+
 export const PRIVACY_SECTIONS: LegalSection[] = [
   {
     heading: "Information we collect",
@@ -150,6 +232,58 @@ export const PRIVACY_SECTIONS: LegalSection[] = [
   },
 ];
 
+export const PRIVACY_SECTIONS_ES: LegalSection[] = [
+  {
+    heading: "Información que recopilamos",
+    body: [
+      "El nombre completo del huésped principal y de los huéspedes que lo acompañan, datos de contacto, información de la reserva, datos del vehículo cuando aplique, y documentos de identificación cuando se requieran para el registro de seguridad del edificio.",
+      "Si nos contactas a través de este sitio o por WhatsApp, guardamos un registro de esa conversación para poder darte soporte y dar seguimiento a tu reserva.",
+    ],
+  },
+  {
+    heading: "Cómo la usamos",
+    body: [
+      "Para procesar y gestionar tu reserva, brindarte soporte como huésped, emitir una factura cuando la solicites, y - cuando la propiedad lo requiera - registrarte con la administración o seguridad del edificio.",
+    ],
+  },
+  {
+    heading: "Cookies y analítica",
+    body: [
+      "Este sitio usa herramientas de analítica (como Google Analytics) para entender cómo los visitantes usan el sitio, y así poder mejorarlo. Estas herramientas pueden usar cookies y recopilar información técnica estándar como el tipo de navegador y la ubicación general - no te identifican personalmente.",
+    ],
+  },
+  {
+    heading: "Compartir con terceros",
+    body: [
+      "No vendemos tu información personal. La compartimos únicamente cuando es necesario - para procesar pagos, cumplir con la ley, registro de seguridad del edificio, o con proveedores de servicio (como nuestra plataforma de reservas/pagos) que nos ayudan a operar el negocio, y solo en la medida necesaria para ese fin.",
+    ],
+  },
+  {
+    heading: "Cuánto tiempo la guardamos",
+    body: [
+      "Conservamos la información de reservas y huéspedes durante el tiempo razonablemente necesario para cumplir con los fines anteriores, incluyendo cualquier requisito legal o fiscal de conservación de registros (como facturas emitidas bajo nuestro registro ante la SAT en Guatemala).",
+    ],
+  },
+  {
+    heading: "Tus derechos",
+    body: [
+      "Puedes preguntarnos qué información personal tenemos sobre ti, solicitar una corrección, o pedirnos que la eliminemos cuando no estemos obligados a conservarla por motivos legales o fiscales. Escríbenos por WhatsApp para hacer una solicitud.",
+    ],
+  },
+  {
+    heading: "Seguridad",
+    body: [
+      "Tomamos medidas razonables para proteger tu información personal de acceso no autorizado, mal uso, o divulgación. Este sitio se sirve a través de una conexión cifrada (HTTPS), y nunca te pedimos que envíes los datos completos de tu tarjeta por WhatsApp o correo electrónico.",
+    ],
+  },
+  {
+    heading: "Contacto",
+    body: [
+      "Preguntas sobre esta política: escríbenos por WhatsApp en inglés (+502 3922 9168) o español (+502 5998 9468).",
+    ],
+  },
+];
+
 export const CANCELLATION_SECTIONS: LegalSection[] = [
   {
     heading: "Booked through Airbnb, Booking.com, or another platform",
@@ -176,6 +310,36 @@ export const CANCELLATION_SECTIONS: LegalSection[] = [
     body: [
       "Any transaction fee a bank or card processor charges on a payment or refund is non-refundable and is passed on to the guest.",
       "This applies to every booking and every refund, direct or through a third-party platform.",
+    ],
+  },
+];
+
+export const CANCELLATION_SECTIONS_ES: LegalSection[] = [
+  {
+    heading: "Reservaste a través de Airbnb, Booking.com, u otra plataforma",
+    body: [
+      "La política de cancelación que seleccionaste en esa plataforma rige tu reserva.",
+    ],
+  },
+  {
+    heading: "Reservaste directo con Buen Rollo Escapes",
+    body: [
+      "Reembolso completo por cancelaciones hechas al menos 48 horas antes del check-in.",
+      "Sin reembolso por cancelaciones dentro de las 48 horas previas al check-in, o por no presentarse (no-show).",
+      "Los reembolsos aprobados se devuelven a tu método de pago original - el tiempo de procesamiento varía según el proveedor.",
+    ],
+  },
+  {
+    heading: "Por qué a veces pedimos el pago por adelantado",
+    body: [
+      "En temporada alta, es posible que pidamos a los huéspedes con reserva directa que paguen antes del check-in. Esto no es una táctica de venta agresiva - es cómo protegemos tu reserva de ser desplazada por un no-show, y cómo gestionamos un número reducido de propiedades con demanda genuinamente alta durante semanas pico.",
+    ],
+  },
+  {
+    heading: "Comisiones de transacción y procesamiento",
+    body: [
+      "Cualquier comisión que cobre un banco o procesador de tarjetas sobre un pago o reembolso no es reembolsable y se traslada al huésped.",
+      "Esto aplica a toda reserva y todo reembolso, ya sea directo o a través de una plataforma externa.",
     ],
   },
 ];
