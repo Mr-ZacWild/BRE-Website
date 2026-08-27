@@ -39,6 +39,15 @@ export function Hero() {
         className="absolute inset-0 h-full w-full object-cover"
         src="/videos/hero.mp4"
         poster="/videos/hero-poster.jpg"
+        // metadata (not auto/none): the poster paints instantly either
+        // way, but "metadata" still lets the browser start buffering
+        // early enough that .play() in the effect above has something
+        // to play immediately, instead of a visible pause-then-start.
+        // Removing the previous default (auto) is what actually helps
+        // LCP - it stops the full video competing with the poster image
+        // and other above-the-fold requests for bandwidth during the
+        // initial paint.
+        preload="metadata"
         autoPlay
         muted
         loop
