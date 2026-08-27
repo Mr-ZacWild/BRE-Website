@@ -38,7 +38,7 @@ export function HomeView({ lang, dict }: { lang: Locale; dict: Dictionary }) {
       <WhyBookDirect />
 
       <section className="mx-auto max-w-6xl px-5 py-16">
-        <p className="text-xs uppercase tracking-widest text-sage">
+        <p className="text-xs uppercase tracking-widest text-quetzal/70">
           Featured stays
         </p>
         <h2 className="mt-2 font-heading text-2xl text-ink sm:text-3xl">
@@ -58,7 +58,7 @@ export function HomeView({ lang, dict }: { lang: Locale; dict: Dictionary }) {
 
       <section className="bg-crema pb-16">
         <div className="mx-auto max-w-6xl px-5">
-          <p className="text-xs uppercase tracking-widest text-sage">
+          <p className="text-xs uppercase tracking-widest text-quetzal/70">
             Where we host
           </p>
           <h2 className="mt-2 font-heading text-2xl text-ink sm:text-3xl">

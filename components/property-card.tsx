@@ -28,7 +28,7 @@ export function PropertyCard({
         tone="mint"
       />
       <div className="p-4">
-        <p className="text-xs uppercase tracking-wide text-sage">
+        <p className="text-xs uppercase tracking-wide text-quetzal/70">
           {property.neighborhood}
         </p>
         <h3 className="mt-1 font-heading text-base text-ink">{property.name}</h3>

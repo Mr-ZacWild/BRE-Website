@@ -21,7 +21,7 @@ const LOGOS = [
 export function TrustedBy() {
   return (
     <div className="overflow-hidden border-b border-quetzal/10 bg-crema py-6">
-      <p className="text-center text-xs uppercase tracking-widest text-sage">
+      <p className="text-center text-xs uppercase tracking-widest text-quetzal/70">
         Also bookable on
       </p>
       <div className="group relative mt-6 overflow-hidden">

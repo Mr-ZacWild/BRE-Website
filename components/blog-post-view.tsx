@@ -38,7 +38,7 @@ export function BlogPostView({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <p className="text-xs uppercase tracking-wide text-sage">{post.category}</p>
+      <p className="text-xs uppercase tracking-wide text-quetzal/70">{post.category}</p>
       <h1 className="mt-1 font-heading text-3xl text-ink sm:text-4xl">{post.title}</h1>
       {post.heroImage ? (
         <div className="relative mt-6 h-64 w-full overflow-hidden rounded-xl">

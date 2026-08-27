@@ -26,7 +26,7 @@ export function BlogCard({ post, lang }: { post: BlogPost; lang: Locale }) {
         <ImagePlaceholder label={post.heroImageSlot} className="h-40 w-full" tone="mint" />
       )}
       <div className="p-4">
-        <p className="text-xs uppercase tracking-wide text-sage">{post.category}</p>
+        <p className="text-xs uppercase tracking-wide text-quetzal/70">{post.category}</p>
         <h3 className="mt-1 font-heading text-base text-ink">{post.title}</h3>
         <p className="mt-2 text-sm text-ink/60">{post.excerpt}</p>
         <span className="mt-3 inline-block text-sm font-medium text-quetzal underline-offset-4 group-hover:underline">

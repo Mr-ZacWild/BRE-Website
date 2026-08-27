@@ -49,7 +49,7 @@ export function PropertyDetailView({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <p className="text-xs uppercase tracking-wide text-sage">
+      <p className="text-xs uppercase tracking-wide text-quetzal/70">
         {property.neighborhood}
       </p>
       <h1 className="mt-1 font-heading text-3xl text-ink sm:text-4xl">
