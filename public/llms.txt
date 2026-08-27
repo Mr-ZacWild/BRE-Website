@@ -2,23 +2,25 @@
 
 > Boutique short-term rental company operating apartments and houses in Guatemala City (Zona 11 and Zona 14) and Antigua Guatemala, plus off-grid beach camping in El Paredón. Guests book direct via WhatsApp instead of through Airbnb or Booking.com, avoiding platform fees while staying in the same properties, run by the same hosts.
 
-Buen Rollo LLC is a U.S.-registered company providing hospitality and accommodation services in Guatemala, able to issue official invoices on request. Our team is an Airbnb Superhost with a 4.91 rating across 219+ reviews. Every property is independently listed and reviewed on Airbnb and Booking.com - see /trust for direct links to verify.
+Buen Rollo LLC is a U.S.-registered company providing hospitality and accommodation services in Guatemala, able to issue official invoices on request. Our team is an Airbnb Superhost with a 4.91 rating across 219+ reviews. Every property is independently listed and reviewed on Airbnb and Booking.com - see the Trust & Safety page for direct links to verify.
 
-Contact: WhatsApp only. English +502 3922 9168, Spanish +502 5998 9468.
+Contact: WhatsApp only. English +502 3922 9168, Spanish +502 5998 9468. All pages exist in English (no prefix) and in Spanish under an /es prefix. Prices are not published on the site - contact via WhatsApp for current rates and availability.
 
 ## Locations
 
-- Guatemala City (Zona 11, Parque San Jorge): 5 apartments, all with building pool, gym, co-working lounge and 24/7 security. Sleeps 4-7 per unit.
-- Guatemala City (Zona 14, Parque 14): 1 large 3-bedroom apartment, sleeps 6, airport and volcano views.
-- Antigua Guatemala (centro): a 1-bedroom loft (sleeps 4) and a 3-bedroom house (sleeps up to 11), both within a few minutes' walk of the Santa Catalina Arch.
-- El Paredón: off-grid beach camping, 250m from the surf, not bookable online - WhatsApp only.
+- [Guatemala City](https://www.buenrolloescapes.com/guatemala-city): Zona 11 (Parque San Jorge) has 5 apartments, all with building pool, gym, co-working lounge and 24/7 security, sleeping 4-7 per unit. Zona 14 (Parque 14) has 1 large 3-bedroom apartment, sleeps 6, with airport and volcano views.
+- [Antigua Guatemala](https://www.buenrolloescapes.com/antigua): a 1-bedroom loft (sleeps 4) and a 3-bedroom house (sleeps up to 11), both within a few minutes' walk of the Santa Catalina Arch.
+- [El Paredón](https://www.buenrolloescapes.com/el-paredon): off-grid beach camping, 250m from the surf, not bookable online - WhatsApp only.
 
 ## Key pages
 
-- /properties - every property, real photos and capacity
-- /antigua, /guatemala-city, /el-paredon - location-specific pages
-- /trust - business registration, how payment works, independently verifiable ratings/reviews on Airbnb, Booking.com and Google
-- /blog - travel guides to Antigua, Guatemala City, El Paredón, Lake Atitlán and Tikal
-- /faq - booking, safety, and logistics questions answered directly
+- [Properties](https://www.buenrolloescapes.com/properties): every property, real photos and capacity.
+- [Trust & Safety](https://www.buenrolloescapes.com/trust): business registration, how payment works, independently verifiable ratings and reviews on Airbnb, Booking.com and Google.
+- [Blog](https://www.buenrolloescapes.com/blog): travel guides to Antigua, Guatemala City, El Paredón, Lake Atitlán and Tikal.
+- [FAQ](https://www.buenrolloescapes.com/faq): booking, safety, and logistics questions answered directly.
+- [Contact](https://www.buenrolloescapes.com/contact): WhatsApp numbers for English and Spanish.
 
-All pages exist in English (no prefix) and Spanish (/es prefix). Prices are not published on the site - contact via WhatsApp for current rates and availability.
+## Optional
+
+- [About](https://www.buenrolloescapes.com/about): who Buen Rollo Escapes is and why it exists.
+- [Sitemap](https://www.buenrolloescapes.com/sitemap.xml): full list of indexed pages, English and Spanish.

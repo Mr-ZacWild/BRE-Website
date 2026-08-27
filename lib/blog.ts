@@ -279,19 +279,25 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         heading: "Airport to your apartment",
         body: [
-          "Private transfers and rideshare apps both work well from the airport into Zona 11 or Zona 14 - message us on WhatsApp before you land and we can point you to a reliable option.",
+          "Private transfers and rideshare apps both work well from the airport into Zona 11 or Zona 14 - message us on WhatsApp before you land and we can book a reliable private transfer straight to your door, no need to figure it out after a long flight.",
         ],
       },
       {
         heading: "Getting to Antigua",
         body: [
-          "Shuttles run constantly between the airport/city and Antigua, and it's an easy private transfer if you'd rather go direct without stops.",
+          "Shuttles run constantly between the airport/city and Antigua, and it's an easy private transfer if you'd rather go direct without stops - about an hour depending on traffic. We can book this for you on WhatsApp too, timed to your flight so no one's waiting around.",
         ],
       },
       {
         heading: "Reaching Lake Atitlán and El Paredón",
         body: [
-          "Both are a few hours from Antigua or Guatemala City by shuttle or private car - shuttles are cheaper and social, private transfer is faster and more flexible. Neither requires anything more complicated than booking ahead.",
+          "Both are a few hours from Antigua or Guatemala City by shuttle or private car - shuttles are cheaper and social, private transfer is faster and more flexible. Message us and we'll arrange whichever fits your dates, directly from wherever you're staying with us.",
+        ],
+      },
+      {
+        heading: "Tours, not just transport",
+        body: [
+          "It's not only transfers - message us on WhatsApp for ATV tours through the highlands, volcano hikes (Acatenango or Pacaya), or any other activity you want sorted before you land. We'll point you to reliable local operators and help you book direct, the same way we do with the apartments.",
         ],
       },
       {
@@ -386,10 +392,10 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "why-book-direct",
-    title: "Why Book Direct: Buen Rollo vs Airbnb and Booking.com",
+    title: "How to Avoid Airbnb Fees in Guatemala: Book Direct Instead",
     category: "Booking Tips",
     excerpt:
-      "Same apartments, same hosts, same standard - booking direct just cuts out the platform fee and the middleman.",
+      "Airbnb's own guest service fee is usually under 14% of your booking - on top of the cleaning fee. Same apartments, same hosts - booking direct cuts that out entirely.",
     heroImageSlot: "A guest checking their phone with a Buen Rollo apartment in the background",
     heroImage: "/images/stock/hand-phone-travel.jpg",
     relatedLocation: "guatemala-city",
@@ -402,9 +408,15 @@ export const BLOG_POSTS: BlogPost[] = [
         ],
       },
       {
+        heading: "What Airbnb's fees actually add up to",
+        body: [
+          "Airbnb charges guests a service fee on top of the nightly rate and cleaning fee - by Airbnb's own help center, this is usually under 14% of your booking subtotal. Booking.com folds its commission into the rate the host sets rather than showing it to you separately, but it's there too, built into the number you see. Either way, that's money leaving your total for the platform, not for the stay itself.",
+        ],
+      },
+      {
         heading: "Better rate, direct line",
         body: [
-          "Booking direct means the platform's service fee isn't baked into your total, and you get a direct WhatsApp line to us from the moment you book - not a support ticket routed through a platform.",
+          "Booking direct means that fee isn't baked into your total, and you get a direct WhatsApp line to us from the moment you book - not a support ticket routed through a platform.",
         ],
       },
       {
@@ -616,6 +628,137 @@ export const BLOG_POSTS: BlogPost[] = [
         heading: "If your layover turns into an overnight",
         body: [
           "Misconnected flights and long overnight layovers happen - our Zona 11 and Zona 14 apartments are a short transfer from the airport, with 24/7 security and fast WhatsApp support if your plans change last minute.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "zona-11-vs-zona-14-guatemala-city",
+    title: "Zona 11 vs Zona 14: Where Should You Stay in Guatemala City?",
+    category: "Guatemala City",
+    excerpt:
+      "Both are Guatemala City's modern, walkable districts - here's the real difference between Zona 11 and Zona 14, and how to pick.",
+    heroImageSlot: "Guatemala City skyline at dusk, Zona 14 towers",
+    heroImage: "/images/stock/guatemala-city-aerial.jpg",
+    relatedLocation: "guatemala-city",
+    relatedProperties: ["zona-11-luxury-king-pool-gym", "zona-14-a1503-three-bedroom"],
+    sections: [
+      {
+        heading: "They're closer than you'd think",
+        body: [
+          "Zona 11 and Zona 14 sit right next to each other on Guatemala City's more modern, residential south side - both a world away from the older, denser Zona 1 downtown core, and both a short drive from La Aurora International Airport (GUA).",
+        ],
+      },
+      {
+        heading: "Zona 11: Parque San Jorge",
+        body: [
+          "Our Zona 11 apartments are in Parque San Jorge, a newly built residential complex with a shared pool, gym, co-working lounge and 24/7 controlled access. It's a quieter, more residential feel - good if you want a real neighborhood base rather than a tourist strip, with Mercado Roosevelt and everyday supermarkets close by.",
+        ],
+      },
+      {
+        heading: "Zona 14: closer to the restaurants and Paseo Cayalá",
+        body: [
+          "Zona 14 sits nearer Paseo Cayalá, Guatemala City's walkable outdoor shopping and restaurant plaza built to look like a small colonial town, plus most of the city's best-reviewed restaurants. Our Zona 14 apartment is a large 3-bedroom with airport and volcano views, built for groups or families who want more space and to be closer to that scene.",
+        ],
+      },
+      {
+        heading: "Airport distance",
+        body: [
+          "Both are close - Zona 14 is marginally nearer La Aurora, but the difference in drive time is usually only a few minutes either way depending on traffic.",
+        ],
+      },
+      {
+        heading: "So which one?",
+        body: [
+          "If you want a pool, gym and co-working space built into the building and a slightly lower cost of stay, go Zona 11. If you want to be walking distance from Paseo Cayalá's restaurant scene and need more bedrooms for a group, go Zona 14. Message us on WhatsApp with your dates and group size and we'll tell you honestly which one actually fits - we'd rather you end up in the right apartment than just the one we happen to be pushing.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "acatenango-pacaya-volcano-hike-guide",
+    title: "Hiking Acatenango or Pacaya from Antigua: What to Know Before You Go",
+    category: "Antigua",
+    excerpt:
+      "Watching Volcán de Fuego erupt from Acatenango's summit is the single most-talked-about thing to do near Antigua. Here's how to actually prepare for it.",
+    heroImageSlot: "Volcán de Fuego erupting at night, seen from Acatenango's summit",
+    heroImage: "/images/stock/acatenango-lava-glow.jpg",
+    relatedLocation: "antigua",
+    relatedProperties: ["antigua-central-king-loft", "antigua-three-bedroom-house"],
+    sections: [
+      {
+        heading: "Why people fly to Guatemala specifically for this",
+        body: [
+          "Acatenango sits directly across from Volcán de Fuego, one of the most consistently active volcanoes in the world. Camp overnight near Acatenango's summit and you watch Fuego erupt - actual lava, at close range - in the dark. It's the single most-photographed, most-talked-about experience near Antigua, and it's genuinely as good as the hype.",
+        ],
+        imageSlot: "Group of hikers silhouetted above the clouds at sunrise on a volcano summit",
+        image: "/images/stock/volcano-summit-sunrise.jpg",
+      },
+      {
+        heading: "Acatenango vs Pacaya: pick the right one",
+        body: [
+          "Acatenango is the serious version - a full-day (usually overnight) hike to roughly 3,976m, cold, steep in places, and physically demanding, but the Fuego eruption views are unmatched. Pacaya is the accessible version - a half-day hike, far gentler, ending with roasting marshmallows over active volcanic vents. If you're short on time or fitness isn't the priority, Pacaya is a genuinely great afternoon. If you want the full lava-at-night experience and have a full day (or two) to spare, it's Acatenango.",
+        ],
+      },
+      {
+        heading: "What to actually pack",
+        body: [
+          "It gets cold at altitude - genuinely cold, often near freezing overnight on Acatenango, even though Antigua at the base is warm during the day. Layers matter more than any single piece of gear: a base layer, a warm mid-layer, and a proper windproof/waterproof outer layer. Good hiking boots (not sneakers - the volcanic ash trail is loose and steep), gloves, a headlamp, and a refillable water bottle. Most tour operators provide a sleeping bag and rent extra jackets on-site if you land in Antigua without full gear, so don't panic if you show up underprepared.",
+        ],
+      },
+      {
+        heading: "Book your base in Antigua, before and after",
+        body: [
+          "Tours leave from and return to Antigua, and you'll want a comfortable, warm place to shower, sleep and recover on both ends - the hike is genuinely tiring. Our Central King Loft and Antigua Three-Bedroom House are both a few minutes' walk from the historic center where most tours pick up, with hot water, real beds and fast wifi waiting for you when you're back down.",
+        ],
+      },
+      {
+        heading: "Book the tour with us, too",
+        body: [
+          "You don't have to piece this together yourself. Message us on WhatsApp and we'll point you to a reliable Acatenango or Pacaya tour operator and help you book it directly - along with any other Antigua activities you want sorted before you land, from ATV tours through the highlands to private transfers to Lake Atitlán or back to the airport. One conversation, and your stay and your activities are handled.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "digital-nomad-antigua-guatemala",
+    title: "Antigua Guatemala for Digital Nomads: Wifi, Cafes and Where to Stay",
+    category: "Remote Work",
+    excerpt:
+      "Cobblestone streets, a volcano view from your desk, and a real nomad community - here's what working remotely from Antigua actually looks like.",
+    heroImageSlot: "Laptop at an Antigua cafe table with a volcano visible through the window",
+    heroImage: "/images/stock/laptop-remote-work.jpg",
+    relatedLocation: "antigua",
+    relatedProperties: ["antigua-central-king-loft", "antigua-three-bedroom-house"],
+    sections: [
+      {
+        heading: "Why Antigua specifically",
+        body: [
+          "Antigua has one of the largest concentrations of long-stay remote workers and language-school students in Central America - which means the infrastructure for it already exists: reliable fiber wifi, a genuine cafe culture built for sitting with a laptop for hours, and a compact, walkable center where you don't need a car.",
+        ],
+      },
+      {
+        heading: "Wifi and cafe culture as your office",
+        body: [
+          "Most cafes in the historic center are set up for remote work, with reliable wifi and outlets that don't require asking. Our own Central King Loft runs 200+ Mbps fiber with mesh routers - no dead spots - if you'd rather work from home most days and treat cafes as a change of scenery rather than a necessity.",
+        ],
+      },
+      {
+        heading: "Time zone and connectivity",
+        body: [
+          "Guatemala sits in Central Time year-round, which overlaps cleanly with US business hours across most of the day - a real advantage over most of Latin America's nomad hubs further south, where the time difference eats into overlap with US clients or teams.",
+        ],
+      },
+      {
+        heading: "A real community, not just tourists passing through",
+        body: [
+          "Antigua's Spanish-language schools bring a constant flow of longer-stay students and remote workers, which means an actual community rather than a one-night tourist crowd - easier to meet people if you're staying a few weeks or more.",
+        ],
+      },
+      {
+        heading: "Where to base yourself",
+        body: [
+          "Our Central King Loft (sleeps up to 4) is a self-contained, private space 3 minutes from the Santa Catalina Arch - a proper desk setup, real kitchen, and everything walkable. For a longer stay with a partner or friends splitting the cost, the Antigua Three-Bedroom House gives everyone their own room and space to actually work without being on top of each other. Message us on WhatsApp with how long you're staying - we can work out a rate for longer bookings.",
         ],
       },
     ],
