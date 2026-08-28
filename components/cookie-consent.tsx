@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import type { Locale } from "@/lib/i18n/config";
-import { loadAnalytics } from "@/lib/analytics";
+import { loadAnalytics, setDefaultConsent } from "@/lib/analytics";
 
 const CONSENT_KEY = "bre-cookie-consent";
 
@@ -23,6 +23,11 @@ export function CookieConsent({ lang }: { lang: Locale }) {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
+    // Runs unconditionally, for every visitor, before anything else -
+    // Google Consent Mode requires a default signal on every page load
+    // regardless of what the visitor ends up choosing. See lib/analytics.ts.
+    setDefaultConsent();
+
     const stored = window.localStorage.getItem(CONSENT_KEY);
     if (stored === "accepted") {
       loadAnalytics();
