@@ -9,7 +9,6 @@ export const metadata: Metadata = {
   alternates: localeAlternates("/about", "es"),
 };
 
-// Body copy still English pending translation - see project notes.
 export default function AboutPageEs() {
-  return <AboutView />;
+  return <AboutView lang="es" />;
 }
