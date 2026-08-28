@@ -763,6 +763,43 @@ export const BLOG_POSTS: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "lake-atitlan-day-trip-from-antigua",
+    title: "Lake Atitlán Day Trip from Antigua: Is It Worth It?",
+    category: "Lake Atitlán",
+    excerpt:
+      "The lake is close enough to Antigua for a day trip, but is that actually the right way to see it? Here's the honest answer, plus how to get there.",
+    heroImageSlot: "Lake Atitlán with volcanoes in the background",
+    heroImage: "/images/stock/lake-atitlan-dock-volcano.jpg",
+    relatedLocation: "antigua",
+    relatedProperties: ["antigua-central-king-loft", "antigua-three-bedroom-house"],
+    sections: [
+      {
+        heading: "How far is it, really",
+        body: [
+          "Lake Atitlán is roughly 2.5-3.5 hours from Antigua by road, depending on the exact route and traffic through the highlands. That makes a day trip physically possible, but it means 5-7 hours round trip in a vehicle for a visit that's realistically only a few hours long once you actually arrive.",
+        ],
+      },
+      {
+        heading: "The honest answer: day trip vs staying over",
+        body: [
+          "If you're tight on time and just want to see the lake and volcanoes with your own eyes, a day trip works - most tours leave Antigua early morning and get you back by evening. But the lake rewards slowing down: boat-hopping between villages, watching the light change over the volcanoes at sunset, a Spanish class or two in San Pedro. If your schedule allows even one night at the lake, most people who've done both say it's worth it over a rushed day trip.",
+        ],
+      },
+      {
+        heading: "What a day trip actually looks like",
+        body: [
+          "A typical day trip covers Panajachel (the main gateway, easiest boat access) plus one or two villages by lancha - San Pedro or Santiago Atitlán are the usual picks. See our full village-by-village guide for what each one is actually like before you decide where to spend your limited hours.",
+        ],
+      },
+      {
+        heading: "Getting there from your Antigua stay",
+        body: [
+          "Shuttles run regularly from Antigua and are the cheaper, more social option; a private transfer is faster and lets you set your own schedule, which matters more on a single-day trip where every hour counts. Message us on WhatsApp before you arrive and we'll book whichever fits your dates directly - no need to piece it together yourself once you land.",
+        ],
+      },
+    ],
+  },
 ];
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
