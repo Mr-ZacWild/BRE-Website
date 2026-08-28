@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Fraunces } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { SITE_URL } from "@/lib/site";
 
@@ -8,6 +9,32 @@ const fraunces = Fraunces({
   subsets: ["latin"],
   style: ["italic", "normal"],
   weight: ["400", "500"],
+});
+
+// Self-hosted instead of the previous <link> to api.fontshare.com. That
+// external stylesheet was render-blocking - the browser had to fetch and
+// parse it before it could even start downloading the actual font files,
+// which was the single biggest chunk of the "render-blocking requests"
+// hit in PageSpeed Insights (~1.8s estimated savings) and part of why
+// LCP stayed slow even after the hero video got smaller. Same two
+// weights each, same font-display: swap behavior, just self-hosted and
+// preloaded like every other Next.js font instead of a 3rd-party request.
+const cabinetGrotesk = localFont({
+  variable: "--font-cabinet-grotesk",
+  src: [
+    { path: "./fonts/cabinet-grotesk-500.woff2", weight: "500", style: "normal" },
+    { path: "./fonts/cabinet-grotesk-700.woff2", weight: "700", style: "normal" },
+  ],
+  display: "swap",
+});
+
+const generalSans = localFont({
+  variable: "--font-general-sans",
+  src: [
+    { path: "./fonts/general-sans-400.woff2", weight: "400", style: "normal" },
+    { path: "./fonts/general-sans-500.woff2", weight: "500", style: "normal" },
+  ],
+  display: "swap",
 });
 
 const description =
@@ -68,13 +95,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${fraunces.variable} h-full antialiased`}>
+    <html
+      lang="en"
+      className={`${fraunces.variable} ${cabinetGrotesk.variable} ${generalSans.variable} h-full antialiased`}
+    >
       <head>
-        <link rel="preconnect" href="https://api.fontshare.com" />
-        <link
-          rel="stylesheet"
-          href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@500,700&f[]=general-sans@400,500&display=swap"
-        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}

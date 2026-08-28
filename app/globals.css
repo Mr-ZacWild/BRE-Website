@@ -8,8 +8,8 @@
   --color-mint: #bad6be;
   --color-ink: #0e1512;
 
-  --font-heading: "Cabinet Grotesk", ui-sans-serif, system-ui, sans-serif;
-  --font-body: "General Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-cabinet-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-general-sans), ui-sans-serif, system-ui, sans-serif;
   --font-accent: var(--font-fraunces), Georgia, serif;
 }
 
