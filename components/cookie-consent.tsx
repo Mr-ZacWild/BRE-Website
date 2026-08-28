@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import type { Locale } from "@/lib/i18n/config";
-import { loadGTM } from "@/lib/gtm";
+import { loadAnalytics } from "@/lib/analytics";
 
 const CONSENT_KEY = "bre-cookie-consent";
 
@@ -25,7 +25,7 @@ export function CookieConsent({ lang }: { lang: Locale }) {
   useEffect(() => {
     const stored = window.localStorage.getItem(CONSENT_KEY);
     if (stored === "accepted") {
-      loadGTM();
+      loadAnalytics();
     } else if (stored !== "declined") {
       setVisible(true);
     }
@@ -33,9 +33,7 @@ export function CookieConsent({ lang }: { lang: Locale }) {
 
   function accept() {
     window.localStorage.setItem(CONSENT_KEY, "accepted");
-    loadGTM();
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({ event: "cookie_consent_accepted" });
+    loadAnalytics();
     setVisible(false);
   }
 
